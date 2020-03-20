@@ -14,12 +14,6 @@
     <script type="text/javascript">
         if (jQuery) {
             jq(document).ready(function () {
-                if (jq.browser.msie) {
-                    jq(":checkbox").click(function () {
-                        jq(this).change();
-                    });
-                }
-
                 jq(".enableDisable").each(function () {
                     var group = jq(this);
 

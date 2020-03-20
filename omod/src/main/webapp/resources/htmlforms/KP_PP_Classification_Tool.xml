@@ -192,13 +192,6 @@
                  {  jq("#none").find(":checkbox").attr("checked",false);}
                 });
 
-
-             if ( jq.browser.msie ) {
-                jq(":checkbox").click(function(){
-                jq(this).change();
-                });
-             }
-
                 beforeSubmit.push(function() {
                        jq("#htmlform").validate();
 
