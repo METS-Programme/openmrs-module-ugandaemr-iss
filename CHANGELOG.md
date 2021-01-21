@@ -1,6 +1,10 @@
 # Changelog for UgandaEMR ISS Implementation
 All notable changes to this project will be documented in this file.
 
+## [1.3.1] - January 21, 2021
+### Changed
+- Upgrade to UgandaEMR POC version 1.1.1
+
 ## [1.3.0] - October 27, 2020
 ### Changed 
 - Now based on UgandaEMR POC version 1.1.0 
