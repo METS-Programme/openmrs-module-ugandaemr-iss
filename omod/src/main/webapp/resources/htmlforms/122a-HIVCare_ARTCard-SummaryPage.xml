@@ -994,7 +994,7 @@ function applyDataMask(field) {
             display:inline-block;
        }
 
-        .row {
+        <!-- .row {
             display: inline-flex;
             clear: both;
         }
@@ -1002,7 +1002,7 @@ function applyDataMask(field) {
         .row .row-col2 {
             float: left;
             width: 50%;
-        }
+        } -->
 
         table th, table td {
             border: 1px solid #BDBDBD;
@@ -1080,7 +1080,7 @@ function applyDataMask(field) {
                     </span>
                     </td>
                 </tr>
-<includeIf velocityTest="6 > $patient.getAge($encounter.getEncounterDatetime())">
+                <includeIf velocityTest="6 > $patient.getAge($encounter.getEncounterDatetime())">
                 <tr>
                     <td colspan="2" id="documentedHIVResult">
                         <label>Documented HIV +ve Result?:</label>
@@ -1205,6 +1205,371 @@ function applyDataMask(field) {
         </section>
 
         <section>
+            <h3>Special Categories</h3>
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-3">
+                          <obs conceptId="165169" answerConceptId="162277" answerLabel="1 - Prisoners" style="checkbox"/>
+                      </div>
+                      <div class="col-md-3">
+                          <obs conceptId="165169" answerConceptId="160666" answerLabel="2 - PWIDs" style="checkbox"  />
+                      </div>
+                      <div class="col-md-3">
+                          <obs conceptId="165169" answerConceptId="165125" answerLabel="3 - Uniformed Men" style="checkbox"  />
+                      </div>
+                      <div class="col-md-3">
+                          <obs conceptId="165169" answerConceptId="165126" answerLabel="4 - Migrant workers" style="checkbox" />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3">
+                          <obs conceptId="165169" answerConceptId="162198" answerLabel="5 - Truckers" style="checkbox" />
+                      </div>
+                      <div class="col-md-3">
+                          <obs conceptId="165169" answerConceptId="159674" answerLabel="6 - Fisher Folks" style="checkbox"  />
+                      </div>
+                      <div class="col-md-3">
+                          <obs conceptId="165169" answerConceptId="165127" answerLabel="7 - Refugees" style="checkbox"  />
+                      </div>
+                      <div class="col-md-3">
+                          <obs conceptId="165169" answerConceptId="90041" answerLabel="8 - Pregnant" style="checkbox"  />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3">
+                          <obs conceptId="165169" answerConceptId="99601" answerLabel="9 - Breastfeeding" style="checkbox"   />
+                      </div>
+                      <div class="col-md-3">
+                          <obs conceptId="165169" answerConceptId="165132" answerLabel="10 - AGYW" style="checkbox" />
+                      </div>
+                      <div class="col-md-3">
+                          <obs conceptId="165169" answerConceptId="162558" answerLabel="11 - People with Disabilities" style="checkbox"  />
+                      </div>
+                      <div class="col-md-3">
+                          <obs conceptId="165169" id="165169" answerConceptId="90002" answerLabel="12 - Others" style="checkbox" />
+                      </div>
+                      <div class="col-md-4">
+                        <label>Specify</label>
+                          <obs id="165184" conceptId="165184" class="ARTSpecialCateogryEnableDisableChild1" />
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3>Substitutions</h3>
+          <div class="card">
+            <div class="card-header">Substitution within 1st line</div>
+            <div class="card-body">
+
+                <div>
+                    <table class="multi table table-borderless table-responsive">
+                        <thead>
+                        <th>Date </th>
+                        <th>New Regimen</th>
+                        <th> Other Regimen</th>
+                        <th>Why</th>
+                        </thead>
+                        <tbody>
+                        <repeat>
+                            <template>
+                                <obsgroup groupingConceptId="99062">
+                                    <tr>
+                                        <td class="ARTStartEnableDisable3 col-md-3">
+                                            <div class="ARTStartEnableDisableChild1 right-inner-addon ">
+                                                <i class=" icon-calendar small"></i>
+                                                <obs id="99163_{n}" conceptId="99163"/>
+                                            </div>
+                                        </td>
+                                        <td class="ARTStartEnableDisableChild3 col-md-3">
+                                            <span class="ArtCareEnableDisable3">
+                                            <obs conceptId="90315"
+                                                 answerConceptIds="99015,99016,99005,99006,164979,99039,99040,99041,99042,164977,99884,99885,164978,163017,99143"
+                                                 answerLabels="d4T-3TC-NVP,d4T-3TC-EFV,AZT-3TC-NVP,AZT-3TC-EFV,AZT-3TC-DTG,TDF-3TC-NVP,TDF-3TC-EFV,TDF-FTC-NVP,TDF-FTC-EFV,TDF-3TC-DTG,ABC-3TC-NVP,ABC-3TC-EFV,ABC-3TC-DTG,ABC-3CT-LPV/r,Other"/>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="ArtCareEnableDisableChild3">
+                                                <obs  conceptId="99146"/>
+                                            </span>
+                                        </td>
+                                        <td colspan="2" class="ARTStartEnableDisableChild3 col-md-3">
+                                            <obs conceptId="90246" answerConceptIds="90040,90043,90044,90045,90002"
+                                                 answerLabels="1.Toxi,2.NewTB,3.NewDrug,4.Drug Stock,5.Other"/>
+                                        </td>
+                                        <td align="center" class="text-nowrap">
+                                            <a href="#" class="add  add-more-link"><i class= "icon-plus-sign"></i></a>
+                                            <a href="#" class="remove remove-more-link required"> <i class="icon-minus"></i></a>
+                                        </td>
+                                    </tr>
+                                </obsgroup>
+                            </template>
+                            <render n="1"/>
+                            <render n="2"/>
+                            <render n="3"/>
+                            <render n="4"/>
+                        </repeat>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+          </div>
+    </section>
+        <p></p>
+    <section>
+        <div class="card">
+         <div class="card-header">
+            Switch to 2nd line or substitution within 2nd line
+            </div>
+          <div class="card-body">
+
+            <div>
+
+                <table class="multi table table-borderless table-responsive">
+                    <thead>
+                    <th>Switch/Substitution</th>
+                    <th>Date </th>
+                    <th>New Regimen</th>
+                    <th>Why</th>
+                    </thead>
+                    <tbody>
+                    <repeat>
+                        <template>
+                            <obsgroup groupingConceptId="99063">
+                                <tr>
+                                    <td class="ARTStartEnableDisableChild10 col-md-3">
+                                        <span class="ARTStartEnableDisableChild1">
+                                            <obs conceptId="165310" answerConceptIds="1371,1372" answerLabels="Switch, Substitution" style="radio" />
+                                        </span>
+                                    </td>
+                                    <td class="ARTStartEnableDisableChild10 col-md-3">
+                                        <div class="ARTStartEnableDisableChild1 right-inner-addon ">
+                                            <i class=" icon-calendar small"></i>
+                                            <obs id="99164_{n}" conceptId="99164"/>
+                                        </div>
+                                    </td>
+                                    <td class="ARTStartEnableDisableChild10 col-md-3">
+                                        <span class="ArtCareEnableDisable7">
+                                            <small>
+                                                <obs conceptId="90315"
+                                                     answerConceptIds="99007,99008,99044,99043,99282,99283,99046,99017,99018,99019,99045,99284,99285,99286,99046,99046,99887,99888,99144"
+                                                     answerLabels="ABC-ddI(250)-LPV/r,ABC-ddI(400)-LPV/r,TDF-3TC-LPV/r,TDF-FTC-LPV/r,ZDV-ddI(250)-LPV/r,ZDV-ddI(400)-LPV/r,ZDV-3TC-LPV/r,ABC-ddI-LPV/r,ABC-ddI-NFV,ABC-ddI-SQV/r,ZDV-ddI-LPV/r,ZDV-ABC-LPV/r,ABC-ddI-ATV/r,AZT-3TC-ATV/r,AZT-3TC-LPV/r,TDF-3TC-ATV/r,ABC-3TC-ATV/r,Other"/>
+                                            </small>
+                                            </span>
+
+                                        <span class="ArtCareEnableDisableChild7">
+                                            <obs  conceptId="99147" />
+                                        </span>
+                                    </td>
+                                    <td  class="ARTStartEnableDisableChild10 col-md-3">
+                                        <obs conceptId="90247" answerConceptIds="90046,90047,99889"
+                                             answerLabels="6.Clinical, 7.Immuno, 8. Virological"/>
+                                    </td>
+                                    <td align="center" class="text-nowrap">
+                                        <a href="#" class="add  add-more-link"><i class= "icon-plus-sign"></i></a>
+                                        <a href="#" class="remove remove-more-link required"> <i class="icon-minus"></i></a>
+                                    </td>
+                                </tr>
+                            </obsgroup>
+                        </template>
+                        <render n="1"/>
+                        <render n="2"/>
+                        <render n="3"/>
+                        <render n="4"/>
+                    </repeat>
+                    </tbody>
+                </table>
+            </div>
+          </div>
+        </div>
+    </section>
+        <p></p>
+    <section>
+        <div class="card">
+        <div class="card-header">Switch to 3rd line or substitution within 3rd line</div>
+        <div class="card-body">
+
+            <div>
+                <table class="multi table table-borderless table-responsive">
+                    <thead>
+                    <th>Switch/Substitution</th>
+                    <th>Date </th>
+                    <th>New Regimen</th>
+                    <th>Why</th>
+                    </thead>
+                    <tbody>
+                    <repeat>
+                        <template>
+                            <obsgroup groupingConceptId="162988">
+                                <tr>
+                                    <td class="ARTStart3EnableDisable1">
+                                        <span class="ARTStartEnableDisableChild1">
+                                                <obs conceptId="165311" answerConceptIds="1371,1372"
+                                                     answerLabels="Switch, Substitution" style="radio" />
+                                        </span>
+                                    </td>
+                                    <td class="ARTStartEnableDisableChild10">
+                                        <div class="ARTStartEnableDisableChild1 right-inner-addon ">
+                                            <i class=" icon-calendar small"></i>
+                                            <obs id="162991_{n}" conceptId="162991"/>
+                                        </div>
+
+                                    </td>
+                                    <td class="ARTStartEnableDisableChild10">
+                                        <span class="ArtCare3EnableDisable10">
+                                            <small>
+                                                <obs conceptId="162990"/>
+                                            </small>
+                                        </span>
+
+                                        <span class="ArtCareEnableDisableChild10">
+                                            <obs  conceptId="162989" />
+                                        </span>
+                                    </td>
+                                    <td class="ARTStartEnableDisableChild10">
+                                        <obs conceptId="90247" answerConceptIds="90046,90047,99889"
+                                             answerLabels="6.Clinical, 7.Immuno, 8. Virological"/>
+                                    </td>
+                                    <td align="center" class="text-nowrap">
+                                        <a href="#" class="add  add-more-link"><i class= "icon-plus-sign"></i></a>
+                                        <a href="#" class="remove remove-more-link required"> <i class="icon-minus"></i></a>
+                                    </td>
+                                </tr>
+                            </obsgroup>
+                        </template>
+                        <render n="1"/>
+                        <render n="2"/>
+                        <render n="3"/>
+                    </repeat>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+    </section>
+    <p></p>
+<section>
+    <div class="card">
+        <div class="card-header">Prior Art</div>
+        <div class="card-body">
+        <table id="art-history" class="table table-borderless">
+            <tbody>
+            <tr>
+                <td>
+                    <label><b>Prior ARV/ART</b></label>
+                </td>
+                <td class="PriorYesNoEnableDisable1">
+                    <obs conceptId="99055" answerConceptIds="90003,90004"
+                         answerLabels="Yes,No"/>
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+
+                </td>
+                <td>
+                    <b>Start Date</b>
+                </td>
+
+                <td>
+                    <b>Duration in Months</b>
+                </td>
+            </tr>
+            <tr class="enableDisable">
+                <obsgroup groupingConceptId="99066">
+                    <td id="trigger" class="PriorYesNoEnableDisableChild1">
+                        <obs conceptId="99056" answerConceptId="90003" answerLabel="PEP:"
+                        />
+                    </td>
+                    <td id="disabled">
+                        <div class="right-inner-addon ">
+                            <i class=" icon-calendar small"></i>
+                            <obs id="second" conceptId="99154" labelText=""/>
+                        </div>
+                    </td>
+                    <td id="disabled">
+                        <obs id="third" conceptId="165252"/>
+                    </td>
+                </obsgroup>
+            </tr>
+
+            <tr class="enableDisable">
+                    <td id="trigger" class="PriorYesNoEnableDisableChild1">
+                        <obs conceptId="165163" answerConceptId="90003" answerLabel="PreP:"
+                        />
+                    </td>
+                    <td id="disabled">
+                        <div class="right-inner-addon ">
+                            <i class=" icon-calendar small"></i>
+                            <obs id="second" conceptId="165250" labelText=""/>
+                        </div>
+                    </td>
+                    <td id="disabled">
+                        <obs id="third" conceptId="165251"/>
+                    </td>
+            </tr>
+            <tr class="enableDisable">
+                <obsgroup groupingConceptId="99598">
+                    <td id="trigger" class="PriorYesNoEnableDisableChild1">
+                        <obs conceptId="99594" answerConceptId="90003" answerLabel="Hep-B:"/>
+                    </td>
+                    <td id="disabled">
+                        <div class="right-inner-addon ">
+                            <i class=" icon-calendar small"></i>
+                            <obs id="second" conceptId="99595" labelText=""/>
+                        </div>
+                    </td>
+                    <td id="disabled">
+                        <obs id="third" conceptId="165253"/>
+                    </td>
+                </obsgroup>
+            </tr>
+            <excludeIf velocityTest="$patient.gender =='M' ">
+                <tr class="enableDisable">
+                    <obsgroup groupingConceptId="99067">
+                        <td id="trigger" class="PriorYesNoEnableDisableChild1">
+                            <obs conceptId="90012" answerConceptId="90003"
+                                 answerLabel="PMTCT Only:"/>
+                        </td>
+                        <td id="disabled">
+                            <div class="right-inner-addon ">
+                                <i class=" icon-calendar small"></i>
+                                <obs id="second" conceptId="99155" labelText=""/>
+                            </div>
+                        </td>
+                        <td id="disabled">
+                            <obs id="third" conceptId="165258"/>
+                        </td>
+                    </obsgroup>
+                </tr>
+            </excludeIf>
+            <tr class="enableDisable">
+                <obsgroup groupingConceptId="99068">
+                    <td id="trigger" class="PriorYesNoEnableDisableChild1">
+                        <obs conceptId="99059" answerConceptId="90003"
+                             answerLabel="Earlier ARV not transfer:"/>
+                    </td>
+                    <td id="disabled">
+                        <div class="right-inner-addon ">
+                            <i class=" icon-calendar small"></i>
+                            <obs id="second" conceptId="99156" labelText=""/>
+                        </div>
+                    </td>
+                    <td id="disabled">
+                        <obs id="third" conceptId="165259"/>
+                    </td>
+                </obsgroup>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+</section>
+
+        <section>
            <includeIf velocityTest="14 > $patient.getAge($encounter.getEncounterDatetime())"><h3>Care Taker</h3></includeIf>
            <includeIf velocityTest="$patient.getAge($encounter.getEncounterDatetime()) > 13"><h3>Treatment Supporter</h3></includeIf>
 
@@ -1234,14 +1599,14 @@ function applyDataMask(field) {
                         <obs conceptId="99142" labelText="Name"/>
                     </td>
                      <td>
-<obs id="supporterSection1" conceptId="99120" answerConceptIds="90280,90288,90286,90279,90284,5618,90002" labelText="Relationship">
-<controls>
-  <when value="90002" thenDisplay="#relationshipOther1" />
-</controls>
-</obs>
-<span id="relationshipOther1">
-<obs conceptId="1163308" />
-</span>
+                    <obs id="supporterSection1" conceptId="99120" answerConceptIds="90280,90288,90286,90279,90284,5618,90002" labelText="Relationship">
+                    <controls>
+                      <when value="90002" thenDisplay="#relationshipOther1" />
+                    </controls>
+                    </obs>
+                    <span id="relationshipOther1">
+                    <obs conceptId="1163308" />
+                    </span>
                     </td>
                     <td>
                         <obs conceptId="90278" labelText="Telephone" class="ugphone" id="90278"/>
@@ -1252,7 +1617,7 @@ function applyDataMask(field) {
         </section>
 
         <includeIf velocityTest="14 > $patient.getAge($encounter.getEncounterDatetime())">
-<section>
+        <section>
             <h3>Child Essentials</h3>
             <table>
                 <tbody>
