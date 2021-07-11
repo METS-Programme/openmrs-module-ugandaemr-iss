@@ -296,6 +296,24 @@
                      answerLabels="Oedema +,-" style="dropdown"/>
             </p>
         </fieldset>
+        <fieldset>
+            <legend><lookup expression="fn.getConcept('165050').name"/></legend> 
+            <!-- <h3><lookup expression="fn.getConcept('165050').name"/></h3> --> <label>Nutrition Status</label>
+            <p>
+                <obs id="br" conceptId="165050" answerConceptIds="1115, 99271, 99272, 99273, 5277"
+                    answerLabels="N - Normal, MAM - Moderate Acute Malnutrition, SAM - Severe Acute Malnutrition,
+                    SAMO - Severe Acute Malnutrition with Oedema, O - Overweight/Obese" style="dropdown"/>
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend><lookup expression="fn.getConcept('99054').name"/></legend>
+            <!-- <h3><lookup expression="fn.getConcept('99054').name"/></h3> --> <label>Nutrition Support</label>
+            <p>
+                <obs id="br" conceptId="99054" answerConceptIds="99053,99050,99051,99052"
+                     answerLabels="TF - Therapeutic Feeding (F75 F100 RUTF), SF - Supplementary Feeding,
+                     IYCF - Infant and Young Child Feeding Counselling ( &lt; 2yrs), NC - Nutrition Counselling only (if &gt; 2yrs)" style="dropdown"/>
+            </p>
+        </fieldset>
     </section>
 
     <submit/>

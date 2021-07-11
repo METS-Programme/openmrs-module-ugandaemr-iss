@@ -543,7 +543,193 @@
                     <td id="disabled">
                         <obs conceptId="99264" rows="2" cols="15"/>
                     </td>
+                </tr> 
+                
+                
+            
+                <tr class="enableDisable">
+                    <td rowspan="11" class="vertical-text">
+                        Encounter Information
+                    </td>
+                    <td>Settings:</td>
+                    <td id="trigger">
+                        <obs id="1305" conceptId="1305" answerConceptIds="1301,1306,1304"
+                        answerLabels="Detected,Not Detected, Sample Rejected"/>
+                    </td>
+                    <!--							<td id="disabled">
+                                                    <obs conceptId="99253"/>
+                                                </td>-->
+                    <td id="disabled">
+                        <obs conceptId="99254" rows="2" cols="15"/>
+                    </td>
                 </tr>
+
+                <tr class="enableDisable">
+                    <td>Is Visit On Schedule:</td>
+                    <td id="trigger">
+                        <obs id="msm_final"  conceptId="165134" answerConceptId="160578" answerLabel="Is Visit On Schedule" class="vertical-layout-options"/>                    
+                    </td>
+                    <!--							<td id="disabled">
+                                                    <obs conceptId="99263"/>
+                                                </td>-->
+                    <td id="disabled">
+                        <obs conceptId="99264" rows="2" cols="15"/>
+                    </td>
+                </tr> 
+
+                <tr class="enableDisable">
+                    <td>PSS Issues Identified:</td>
+                    <td id="trigger">
+                        <obs conceptId="99195" answerConceptId="90003"/>
+                        <obs conceptId="99195" answerConceptId="90003"/>
+                        <obs conceptId="99195" answerConceptId="90003"/>                        
+                        <obs conceptId="99195" answerConceptId="90003"/>
+                        <obs conceptId="99195" answerConceptId="90003"/>
+                        <obs conceptId="99195" answerConceptId="90003"/>
+                    </td>
+                    <!--							<td id="disabled">
+                                                    <obs conceptId="99255"/>
+                                                </td>-->
+                    <!-- <td id="disabled">
+                        <obs conceptId="99256" rows="2" cols="15"/>
+                    </td>-->
+                </tr>
+
+                <tr class="enableDisable">
+                    <td>ART Preparation, Readiness, Adherence and Support:</td>
+                    <td id="trigger">
+                        <obs id="165207" conceptId="1305" answerConceptIds="165202,165203,99186,165204,165206,165205"
+                        answerLabels="1 - ART literacy,2 - Adherence preparation and plan,3 - Ready to start and Initiate,4 - Not ready to start,5 - Ongoing Adherence counselling and support,
+                        6 - Intensive Adherence counselling and support"/>
+                    </td>
+                    <!--							<td id="disabled">
+                                                    <obs conceptId="99257"/>
+                                                </td>-->
+                    <td id="disabled">
+                        <obs conceptId="99258" rows="2" cols="15"/>
+                    </td>
+                </tr>
+
+                <tr class="enableDisable">
+                    <td>Depression Status:</td>
+                    <td>
+                        <span class="final_classification">
+                            <obs conceptId="165194" answerConceptId="165186" answerLabels="1 - No Signs" style="checkbox" class="horizontal"/>
+
+                            <obs conceptId="165194" answerConceptId="165195" answerLabels="2 - More than 2 weeks loss of interest in pleasurable activities" style="checkbox" class="horizontal"/>
+
+                            <obs conceptId="165194" answerConceptId="165196" answerLabels="3 - More than 2 weeks of feeling down" style="checkbox" class="horizontal"/>
+                        </span>
+                    </td>
+                    <!--							<td id="disabled">
+                                                    <obs conceptId="99259"/>
+                                                </td>-->
+                    <td id="disabled">
+                        <obs conceptId="99260" rows="2" cols="15"/>
+                    </td>
+                </tr>
+
+                <tr class="enableDisable">
+                    <td>GBV/VAC:</td>
+                    <td id="trigger">
+                        <obs conceptId="165302" answerConceptIds="165186,165187,165189,1490,165262"
+                   answerLabels="1 - No Signs, 2 - Emotional or Psyschosocial Harm, 3 - Physical Harm, 4 - Inappropriately touched/fondled, 5 - Forced Sexual Intercourse" style="dropdown"/>
+                    </td>
+                    <!--							<td id="disabled">
+                                                    <obs conceptId="99257"/>
+                                                </td>-->
+                    <td id="disabled">
+                        <obs conceptId="99258" rows="2" cols="15"/>
+                    </td>
+                </tr>
+
+                <tr class="enableDisable">
+                    <td>Disclosed Relationship:</td>
+                    <td>
+                        <p>
+                            <obs id="99175" conceptId="165130" style="radio"
+                                 answerConceptIds="90003,90004"
+                                 class="vertical-layout-options"/>
+                        </p>
+                    </td>
+                    <!--							<td id="disabled">
+                                                    <obs conceptId="99263"/>
+                                                </td>-->
+                    <td id="disabled">
+                        <obs conceptId="99264" rows="2" cols="15"/>
+                    </td>
+                </tr>
+
+                <tr class="enableDisable">
+                    <td>OVC Screening:</td>
+                    <td id="trigger">
+                        <obs conceptId="165200" answerConceptIds="165186,165223,165273,165219,165220,164909,165221,165222"
+                     answerLabels="1 - No signs, 2 - Had less than 1 meal a day, 3 - Not in School, 4 - Malnourished, 5 - Caregiver unemployed/Casual labourer, 6 - Non Suppressed VL, 7 - Missed Appointment, 8 - Has signs of abuse/exploitation or neglect" style="dropdown"/>
+                    </td>
+                    <!--							<td id="disabled">
+                                                    <obs conceptId="99257"/>
+                                                </td>-->
+                    <td id="disabled">
+                        <obs conceptId="99258" rows="2" cols="15"/>
+                    </td>
+                </tr>
+
+                <tr class="enableDisable">
+                    <td>PHDP Components:</td>
+                    <td id="trigger">
+                        <obs id="165218" conceptId="165218" answerConceptIds="165213,99296,374,165214,165215,90012,1167,165216,99052,165217,90002" answerLabels="1 - STI Screening And Treatment,
+                     2 - FP Counselling, 3 - FP Method provided,4 - Alcohol and Substance abuse reduction, 5 - Risk Reduction Counselling,6 - PMTCT, 7 - Disclosure Counselling,
+                     8 - Mgt of Stigma and Discrimination, 9 - Nutritional Counselling, 10 - Basic care package, 11 - Others Specify" />
+                    </td>
+                    <!--							<td id="disabled">
+                                                    <obs conceptId="99257"/>
+                                                </td>-->
+                    <td id="disabled">
+                        <obs conceptId="99258" rows="2" cols="15"/>
+                    </td>
+                </tr>
+
+                <tr class="enableDisable">
+                    <td>Intervation Approaches:</td>
+                    <td id="trigger">
+                        <obs conceptId="165190"
+                     answerConceptIds="99560,99366,165191,165192,165193"
+                     answerLabels="1 - Individual Counselling, 2 - Group psychotherapy, 3 - Peer counselling, 4 - Peer Support Group, 5 - Linkages and Refferals" />
+                    </td>
+                    <!--							<td id="disabled">
+                                                    <obs conceptId="99257"/>
+                                                </td>-->
+                    <td id="disabled">
+                        <obs conceptId="99258" rows="2" cols="15"/>
+                    </td>
+                </tr>
+
+                <tr class="enableDisable">
+                    <td>Linkages and Referrals:</td>
+                    <td id="trigger">
+                        <obs id="165193" conceptId="165193"
+                     answerConceptIds="165264,165197,165302,165198,165199,165200,99558,99199,165192,99560,5484,165201,90002"
+                     answerLabels="1 - Mental Health Care/Rehabilitation, 2 - Livelihood Support, 3 - GBV/VAC care,4 - Legal Support, 5 - Education Support, 6 - OVC Services,
+                     7 - Spiritual care, 8 - Community Support, 9 - Peer Support, 10 - Counselling, 11 - Nutritional Support, 12 - Sexual Reproductive Health, 13 - Other Specify" />
+                    </td>
+                    <!--							<td id="disabled">
+                                                    <obs conceptId="99257"/>
+                                                </td>-->
+                    <td id="disabled">
+                        <obs conceptId="99258" rows="2" cols="15"/>
+                    </td>
+                </tr>
+
+                <tr class="enableDisable">
+                    <td>Comments:</td>                    
+                    <!--							<td id="disabled">
+                                                    <obs conceptId="99257"/>
+                                                </td>-->                
+                    <td id="trigger">
+                        <obs conceptId="99258" rows="2" cols="15"/>
+                    </td>
+                </tr>
+
                 </tbody>
             </table>
         </section>
