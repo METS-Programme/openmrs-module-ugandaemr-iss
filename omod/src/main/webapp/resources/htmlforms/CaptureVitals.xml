@@ -297,7 +297,7 @@
             </p>
         </fieldset>
         <fieldset>
-            <legend><lookup expression="fn.getConcept('165050').name"/></legend> 
+            <legend><!-- <lookup expression="fn.getConcept('165050').name"/> --> <label>Nutrition Status</label></legend> 
             <!-- <h3><lookup expression="fn.getConcept('165050').name"/></h3> --> <label>Nutrition Status</label>
             <p>
                 <obs id="br" conceptId="165050" answerConceptIds="1115, 99271, 99272, 99273, 5277"
