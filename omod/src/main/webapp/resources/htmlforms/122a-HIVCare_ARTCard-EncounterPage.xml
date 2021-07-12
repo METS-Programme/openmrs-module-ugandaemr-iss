@@ -65,6 +65,10 @@
             background: #B6D6E6;
         }
 
+        .card .card-body {
+            background: #B6D6E6;
+        }
+
         .section {
             margin: 20px 0px;
         }
@@ -541,7 +545,84 @@
                         jq("#review").find("textarea").prop("disabled", false); 
 
                     }
+
+
                 });
+
+                jq(document).ready(function () {
+                    $allRows = jq(this).find('.multi-drug');
+                    $allRows.hide();
+                    jq('#1-removeEntry').remove();
+                    jq('#10-addEntry').remove();
+                    jq('#1-toggleContainer').show();
+
+                    jq('#11-removeEntry').remove();
+                    jq('#20-addEntry').remove();
+                    jq('#11-toggleContainer').show();
+                });
+
+
+                jq(document).ready(function () {
+                    jq('.addEntry').on("click", function () {
+                        var correctedAddButtonId = parseFloat(this.id) + 1;
+                        var contentAddId = "#" + correctedAddButtonId + "-toggleContainer";
+                        jq(contentAddId).toggle(true);
+                        jq('#' + this.id).toggle(false);
+                        jq('#' + parseFloat(this.id) + '-removeEntry').toggle(true);
+                        return false;
+                    });
+                });
+
+                jq(document).ready(function () {
+                    jq('.removeEntry').on("click", function () {
+                        var correctedRemoveButtonId = parseFloat(this.id) - 1;
+                        var contentAddId = "#" + parseFloat(this.id) + "-toggleContainer";
+                        jq(contentAddId).toggle(false);
+                        jq(':input:not(:button)', contentAddId).val([]);
+                        jq('#' + correctedRemoveButtonId + '-addEntry').toggle(true);
+                        jq('#' + correctedRemoveButtonId + '-removeEntry').toggle(true);
+
+                        return false;
+                    });
+
+                });
+
+                jq(document).ready(function () {
+                    $allRows_other = jq(this).find('.multi-drug-other');
+                    $allRows_other.hide();
+                    jq('#1-removeEntry-other').remove();
+                    jq('#10-addEntry-other').remove();
+                    jq('#1-toggleContainer-other').show();
+
+                    jq('#11-removeEntry-other').remove();
+                    jq('#20-addEntry-other').remove();
+                    jq('#11-toggleContainer-other').show();
+                });
+
+                jq(document).ready(function () {
+                    jq('.addEntry-other').on("click", function () {
+                        var correctedAddButtonId = parseFloat(this.id) + 1;
+                        var contentAddId = "#" + correctedAddButtonId + "-toggleContainer-other";
+                        jq(contentAddId).toggle(true);
+                        jq('#' + this.id).toggle(false);
+                        jq('#' + parseFloat(this.id) + '-removeEntry-other').toggle(true);
+                        return false;
+                    });
+                });
+
+               jq(document).ready(function () {
+                    jq('.removeEntry-other').on("click", function () {
+                        var correctedRemoveButtonId = parseFloat(this.id) - 1;
+                        var contentAddId = "#" + parseFloat(this.id) + "-toggleContainer-other";
+                        jq(contentAddId).toggle(false);
+                        jq(':input:not(:button)', contentAddId).val([]);
+                        jq('#' + correctedRemoveButtonId + '-addEntry-other').toggle(true);
+                        jq('#' + correctedRemoveButtonId + '-removeEntry-other').toggle(true);
+
+                    return false;
+                });
+
+            });
 
             });
         }
@@ -623,6 +704,38 @@
                             <obs id="visitType" conceptId="1163173" answerConceptIds="1163310,1163311,1163307,1163175,1163312,1163313" answerLabels="1-Facility,2-Community,3-POV,4-Nurse,5-Sick,6-Represented" labelText="Type of Visit:" required="true" />
                         </td>
                     </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <table>
+                <tbody>
+                    <div class="card">
+                        <div class="card-header">
+                            Reasons for next appointment
+                        </div>
+                        <div class="card-body">
+                            <div class="row reason-for-next-appointment" >
+                                <obs conceptId="160288" answerConceptId="164968"   answerLabel="ART Initiation" class="col-md-3"/>
+                                <obs conceptId="160288" answerConceptId="164972"   answerLabel="ART Refill" class="col-md-3" />
+                                <obs conceptId="160288" answerConceptId="164970"   answerLabel="ART Regimen Switch/ Substitution" class="col-md-3" />
+                                <obs conceptId="160288" answerConceptId="856"   answerLabel="Viral Load" class="col-md-3"/>
+                                <obs conceptId="160288" answerConceptId="5497"   answerLabel="CD4" class="col-md-3"/>
+                                <obs conceptId="160288" answerConceptId="163153"  answerLabel="IAC" class="col-md-3"/>
+                                <obs conceptId="160288" answerConceptId="164971"     answerLabel="T.B Drug Refill" class="col-md-3"/>
+                                <obs conceptId="160288" answerConceptId="164973"  answerLabel="T.B Follow up" class="col-md-3"/>
+                                <obs conceptId="160288" answerConceptId="99324"  answerLabel="ANC" class="col-md-3"/>
+                                <obs conceptId="160288" answerConceptId="164974"  answerLabel="EID" class="col-md-3"/>
+                                <obs conceptId="160288" answerConceptId="90012"     answerLabel="PMTCT" class="col-md-3"/>
+                                <obs conceptId="160288" answerConceptId="903"  answerLabel="Hypertension/ Diabetes" class="col-md-3"/>
+                                <obs conceptId="160288" answerConceptId="5484"  answerLabel="Nutrition" class="col-md-3"/>
+                                <obs id="check-other-reason-for-next-appointment" conceptId="160288" answerConceptId="90002"  answerLabel="Other Specify" class="col-md-3"/>
+                                <obs id="other-reason-for-next-appointment" conceptId="164975"
+                                    labelText="Other Reason for next appointment" class="col-md-5"/>
+                            </div>
+                        </div>
+                    </div>
                 </tbody>
             </table>
         </section>
@@ -739,6 +852,8 @@
                                                      answerLabel="4 - Diaphram/Cervical Cap"/>
                                                 <obs id="br" conceptId="374" answerConceptId="5275"
                                                      answerLabel="5 - Intra uterine device (IUD)"/>
+                                                <obs id="br" conceptId="374" answerConceptId="5277"
+                                                    answerLabel="7 - Fertility Awareness Methods"/>
                                             </span>
                                         </excludeIf>
                                         <obs id="br" conceptId="374" answerConceptId="99265"
@@ -849,6 +964,10 @@
                                     <label>Action taken:</label>
                                     <obs conceptId="1163316"/>
                                 </span>
+                                <label>Status Of The Cervix</label>
+                                    <div class="col-md-2">
+                                    <obs conceptId="99350" answerConceptIds="99348,99347,1118" answerLabels="FOM - Cervix is free of malignancy,SS - Cervix is suspicious of malignancy,ND - Not Done" class="long-value-select"/>
+                                    </div>
                             </td>
                         </excludeIf>
                         <td>
@@ -894,6 +1013,59 @@
                     </tr>
                 </tbody>
             </table>
+        </section>
+        <section>
+            <div class="card">
+                <div class="card-header">Diagnosis</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <encounterDiagnoses required="false" selectedDiagnosesTarget=""
+                                                preferredCodingSource="ICD-10-WHO"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">Advanced Disease Status and WHO Clinical Stage
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <obs conceptId="165272"
+                                 answerConceptIds="165309, 165266, 165267, 165268, 165269, 165270, 165271"
+                                 answerLabels="1 - No Adv. Disease, 2 - Suspected Adv. Disease, 3a - Confirmed Adv. Disease CD4 &lt; 200, 3b - Confirmed Adv. Disease - Pos CrAg,
+                             3c - Confirmed Adv. Disease - Pos TB, 3d - Confirmed Adv. Disease - WHO Stage 3/4, 3e - Confirmed Adv. Disease - Child &lt; 5 Yrs"    labelText="Advanced Disease Status"/>
+                        </div>
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4">
+                            <obs id="who-clinic-stage"  conceptId="90203"
+                                 answerConceptIds="90033,90034,90035,90036,90293,90294,90295,90296"
+                                 answerLabels="1,2,3,4,T1,T2,T3,T4" labelText="WHO Clinical stages"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">Hepatitis B status and Syphilis Status</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <obs conceptId="1322" answerConceptIds="159971,90001"
+                                 labelText="Hep B Status" answerLabels="T - Tested, NT - Not Tested" />
+                        </div>
+                        <div class="col-md-4">
+                            <obs id="1322" conceptId="1322" answerConceptIds="703,664"
+                                 labelText="Hep B Results (if tested)" answerLabels="Pos - Positive,Neg - Negative"  />
+                        </div>
+                        <div class="col-md-4">
+                            <obs conceptId="99753" 
+                                 answerConceptIds="162848,99756,99755,99754"
+                                 labelText="Syphilis Status" answerLabels=" 1 - No symptoms, 2 - Symptomatic Non-Reactive, 3 - Symptomatic Reactive, 4 - Symptomatic Reactive and treated"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
         <section id="thirdSection">
             <table>
@@ -1202,6 +1374,137 @@
                     </tr>
                 </tbody>
             </table>
+        </section>
+
+        <section>
+            <div class="card">
+                <div class="card-header">
+                    Fluconazole
+                </div>
+                <div class="card-body">
+                    <obsgroup groupingConceptId="165306">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <br/>
+                                <obs conceptId="1282" answerConceptSetIds="165308"
+                                     answerConceptIds="747"
+                                     answerLabels="Fluconazole"
+                                     style="radio"
+                                     class="horizontal"/>
+                            </div>
+                            <div class="col-md-2">
+                                <obs labelText="No. of Pills" conceptId="160856"/>
+                            </div>
+                            <div class="col-2 duration">
+                                <obs conceptId="159368" labelText="No. of Days"/>
+                            </div>
+
+                            <div class="col-md-2">
+                                <obs conceptId="1190" labelText="Start Date"/>
+                            </div>
+                            <div class="col-md-2">
+                                <obs conceptId="1191" labelText="Stop Date"/>
+                            </div>
+                        </div>
+                    </obsgroup>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <label>Essential Medications</label>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <repeat>
+                            <template>
+                                <obsgroup groupingConceptId="160741">
+                                    <div class="row multi-drug" id="{id}-toggleContainer">
+                                        <div class="col-2">
+                                            <obs labelText="Drugs"  id="{id}-drug" conceptId="1282" answerClasses="Drug" style="autocomplete" class="fullwidth"/>
+                                        </div>
+                                        <div class="col-2">
+                                            <obs labelText="Quantity" conceptId="160856"/>
+                                        </div>
+                                        <div class="col-2">
+                                            <obs labelText="Qty unit" conceptId="165791" answerConceptSetIds="162402,162384"/>
+                                        </div>
+                                        <div class="col-2 duration">
+                                            <obs conceptId="159368" labelText="Duration"/>
+                                        </div>
+                                        <div class="col-2">
+                                            <obs conceptId="1732" labelText="Duration unit"/>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="add-entry mt-4">
+                                                <a href="#" id="{id}-addEntry" class="addEntry add-more-link"><i class="icon-plus-sign"></i></a>
+                                                <a href="#" class="removeEntry remove-more-link" id="{id}-removeEntry"><i class="icon-minus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </obsgroup>
+                            </template>
+                            <render id="1"/>
+                            <render id="2"/>
+                            <render id="3"/>
+                            <render id="4"/>
+                            <render id="5"/>
+                            <render id="6"/>
+                            <render id="7"/>
+                            <render id="8"/>
+                            <render id="9"/>
+                            <render id="10"/>
+                        </repeat>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <label>Other Medications</label>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <repeat>
+                            <template>
+                                <obsgroup groupingConceptId="165874">
+                                    <div class="row multi-drug-other" id="{id}-toggleContainer-other">
+                                        <div class="col-2">
+                                            <obs labelText="Drug" id="{id}-drugother" conceptId="99035" class="fullwidth"/>
+                                        </div>
+                                        <div class="col-2">
+                                            <obs labelText="Quantity" conceptId="160856"/>
+                                        </div>
+                                        <div class="col-2">
+                                            <obs labelText="Qty unit" conceptId="165791" answerConceptSetIds="162402,162384"/>
+                                        </div>
+                                        <div class="col-2 duration">
+                                            <obs conceptId="159368" labelText="Duration"/>
+                                        </div>
+                                        <div class="col-2">
+                                            <obs conceptId="1732" labelText="Duration unit"/>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="add-entry mt-4">
+                                                <a href="#" id="{id}-addEntry-other" class="addEntry-other add-more-link"><i class="icon-plus-sign"></i></a>
+                                                <a href="#" class="removeEntry-other remove-more-link" id="{id}-removeEntry-other"><i class="icon-minus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </obsgroup>
+                            </template>
+                            <render id="1"/>
+                            <render id="2"/>
+                            <render id="3"/>
+                            <render id="4"/>
+                            <render id="5"/>
+                            <render id="6"/>
+                            <render id="7"/>
+                            <render id="8"/>
+                            <render id="9"/>
+                            <render id="10"/>
+                        </repeat>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="fifthSection">
