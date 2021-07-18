@@ -126,6 +126,19 @@
 							</span>
                     </td>
                 </tr>
+
+                <tr class="enableDisable">
+                    <td>Is Visit On Schedule:</td>
+                    <td id="trigger">
+                        <obs id="msm_final"  conceptId="165134" answerConceptId="160578" answerLabel="Is Visit On Schedule" class="vertical-layout-options"/>                    
+                    </td>
+                    <!--							<td id="disabled">
+                                                    <obs conceptId="99263"/>
+                                                </td>-->
+                    <td id="disabled">
+                    </td>
+                </tr>
+
                 </tbody>
             </table>
         </section>
@@ -564,35 +577,16 @@
                     </td>
                 </tr>
 
-                <tr class="enableDisable">
-                    <td>Is Visit On Schedule:</td>
-                    <td id="trigger">
-                        <obs id="msm_final"  conceptId="165134" answerConceptId="160578" answerLabel="Is Visit On Schedule" class="vertical-layout-options"/>                    
-                    </td>
-                    <!--							<td id="disabled">
-                                                    <obs conceptId="99263"/>
-                                                </td>-->
-                    <td id="disabled">
-                        <obs conceptId="99264" rows="2" cols="15"/>
-                    </td>
-                </tr> 
+                 
 
                 <tr class="enableDisable">
                     <td>PSS Issues Identified:</td>
                     <td id="trigger">
-                        <obs conceptId="99195" answerConceptId="90003"/>
-                        <obs conceptId="99195" answerConceptId="90003"/>
-                        <obs conceptId="99195" answerConceptId="90003"/>                        
-                        <obs conceptId="99195" answerConceptId="90003"/>
-                        <obs conceptId="99195" answerConceptId="90003"/>
-                        <obs conceptId="99195" answerConceptId="90003"/>
-                    </td>
-                    <!--							<td id="disabled">
-                                                    <obs conceptId="99255"/>
-                                                </td>-->
-                    <!-- <td id="disabled">
+                        <obs conceptId="165244"  />
+                    </td>                    
+                    <td id="disabled">
                         <obs conceptId="99256" rows="2" cols="15"/>
-                    </td>-->
+                    </td>
                 </tr>
 
                 <tr class="enableDisable">
@@ -614,11 +608,9 @@
                     <td>Depression Status:</td>
                     <td>
                         <span class="final_classification">
-                            <obs conceptId="165194" answerConceptId="165186" answerLabels="1 - No Signs" style="checkbox" class="horizontal"/>
+                            <obs conceptId="165194"/>
 
-                            <obs conceptId="165194" answerConceptId="165195" answerLabels="2 - More than 2 weeks loss of interest in pleasurable activities" style="checkbox" class="horizontal"/>
 
-                            <obs conceptId="165194" answerConceptId="165196" answerLabels="3 - More than 2 weeks of feeling down" style="checkbox" class="horizontal"/>
                         </span>
                     </td>
                     <!--							<td id="disabled">
@@ -675,6 +667,19 @@
                 </tr>
 
                 <tr class="enableDisable">
+                    <td>OVC Assessment:</td>
+                    <td id="trigger">
+                        <obs conceptId="165212"  style="dropdown"/>
+                    </td>
+                    <!--							<td id="disabled">
+                                                    <obs conceptId="99257"/>
+                                                </td>-->
+                    <td id="disabled">
+                        <obs conceptId="99258" rows="2" cols="15"/>
+                    </td>
+                </tr>
+
+                <tr class="enableDisable">
                     <td>PHDP Components:</td>
                     <td id="trigger">
                         <obs id="165218" conceptId="165218" answerConceptIds="165213,99296,374,165214,165215,90012,1167,165216,99052,165217,90002" answerLabels="1 - STI Screening And Treatment,
@@ -685,7 +690,7 @@
                                                     <obs conceptId="99257"/>
                                                 </td>-->
                     <td id="disabled">
-                        <obs conceptId="99258" rows="2" cols="15"/>
+                        <obs id="phdp-other" conceptId="90002"/>
                     </td>
                 </tr>
 
@@ -711,23 +716,14 @@
                      answerConceptIds="165264,165197,165302,165198,165199,165200,99558,99199,165192,99560,5484,165201,90002"
                      answerLabels="1 - Mental Health Care/Rehabilitation, 2 - Livelihood Support, 3 - GBV/VAC care,4 - Legal Support, 5 - Education Support, 6 - OVC Services,
                      7 - Spiritual care, 8 - Community Support, 9 - Peer Support, 10 - Counselling, 11 - Nutritional Support, 12 - Sexual Reproductive Health, 13 - Other Specify" />
-                    </td>
-                    <!--							<td id="disabled">
-                                                    <obs conceptId="99257"/>
-                                                </td>-->
+                    </td>                
                     <td id="disabled">
-                        <obs conceptId="99258" rows="2" cols="15"/>
+                        <obs id="linkage-other" conceptId="90002"/>
                     </td>
                 </tr>
 
                 <tr class="enableDisable">
-                    <td>Comments:</td>                    
-                    <!--							<td id="disabled">
-                                                    <obs conceptId="99257"/>
-                                                </td>-->                
-                    <td id="trigger">
-                        <obs conceptId="99258" rows="2" cols="15"/>
-                    </td>
+                    
                 </tr>
 
                 </tbody>
