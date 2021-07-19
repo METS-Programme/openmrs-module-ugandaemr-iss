@@ -689,8 +689,8 @@
                     <!--							<td id="disabled">
                                                     <obs conceptId="99257"/>
                                                 </td>-->
-                    <td id="disabled">
-                        <obs id="phdp-other" conceptId="90002"/>
+                    <td id="enableDisable">
+                        <obs id="phdp-other" conceptId="165265"/>
                     </td>
                 </tr>
 
@@ -717,8 +717,8 @@
                      answerLabels="1 - Mental Health Care/Rehabilitation, 2 - Livelihood Support, 3 - GBV/VAC care,4 - Legal Support, 5 - Education Support, 6 - OVC Services,
                      7 - Spiritual care, 8 - Community Support, 9 - Peer Support, 10 - Counselling, 11 - Nutritional Support, 12 - Sexual Reproductive Health, 13 - Other Specify" />
                     </td>                
-                    <td id="disabled">
-                        <obs id="linkage-other" conceptId="90002"/>
+                    <td id="enableDisable">
+                        <obs id="linkage-other" conceptId="165934"/>
                     </td>
                 </tr>
 
