@@ -685,12 +685,13 @@
                         <obs id="165218" conceptId="165218" answerConceptIds="165213,99296,374,165214,165215,90012,1167,165216,99052,165217,90002" answerLabels="1 - STI Screening And Treatment,
                      2 - FP Counselling, 3 - FP Method provided,4 - Alcohol and Substance abuse reduction, 5 - Risk Reduction Counselling,6 - PMTCT, 7 - Disclosure Counselling,
                      8 - Mgt of Stigma and Discrimination, 9 - Nutritional Counselling, 10 - Basic care package, 11 - Others Specify" />
+                     <obs id="phdp-other" conceptId="165265"/>
                     </td>
                     <!--							<td id="disabled">
                                                     <obs conceptId="99257"/>
                                                 </td>-->
-                    <td id="enableDisable">
-                        <obs id="phdp-other" conceptId="165265"/>
+                    <td id="disabled">
+                        <obs conceptId="99258" rows="2" cols="15"/>
                     </td>
                 </tr>
 
@@ -716,9 +717,10 @@
                      answerConceptIds="165264,165197,165302,165198,165199,165200,99558,99199,165192,99560,5484,165201,90002"
                      answerLabels="1 - Mental Health Care/Rehabilitation, 2 - Livelihood Support, 3 - GBV/VAC care,4 - Legal Support, 5 - Education Support, 6 - OVC Services,
                      7 - Spiritual care, 8 - Community Support, 9 - Peer Support, 10 - Counselling, 11 - Nutritional Support, 12 - Sexual Reproductive Health, 13 - Other Specify" />
+                     <obs id="linkage-other" conceptId="165934"/>
                     </td>                
-                    <td id="enableDisable">
-                        <obs id="linkage-other" conceptId="165934"/>
+                    <td id="disabled">
+                        <obs conceptId="99258" rows="2" cols="15"/>
                     </td>
                 </tr>
 
