@@ -1395,60 +1395,7 @@
             </div>
             </div>
         </section>
-        <section>
-            <h3>ART Transfer In</h3>
-            <table class="multi table table-borderless table-responsive">
-                <thead>
-                <th>Date Transferred:</th>
-                <th>Transferred from:</th>
-                <th>ARVs:</th>
-                <th colspan="2">Other ARVs:</th>
-                </thead>
-                <tbody>
-                <repeat>
-                    <template>
-                        <obsgroup groupingConceptId="99065">
-                            <tr>
-                                <td class="ARTStartEnableDisable2 ">
-                                    <div class="right-inner-addon ">
-                                        <i class=" icon-calendar small"></i>
-                                        <obs id="99160" conceptId="99160"/>
-                                    </div>
-                                </td>
-                                <td class="ARTStartEnableDisableChild2 ">
-                                    <obs conceptId="90206" />
-                                </td>
-                                <td class="ARTStartEnableDisableChild2 ">
-                    <span class="ArtCareEnableDisable1">
-                    <small>
-                        <obs conceptId="99064"
-                             answerConceptIds="99015,99016,99005,99006,164979,99039,99040,99041,99042,164977,99007,99008,99044,99043,99282,99283,99046,99017,99018,99019,99045,99284,99285,99286,99046,164978,163017,90002"
-                             answerLabels="d4T-3TC-NVP,d4T-3TC-EFV,AZT-3TC-NVP,AZT-3TC-EFV,AZT-3TC-DTG,TDF-3TC-NVP,TDF-3TC-EFV,TDF-FTC-NVP,TDF-FTC-EFV,TDF-3TC-DTG,ABC-ddI(250)-LPV/r,ABC-ddI(400)-LPV/r,TDF-3TC-LPV/r,TDF-FTC-LPV/r,ZDV-ddI(250)-LPV/r,ZDV-ddI(400)-LPV/r,ZDV-3TC-LPV/r,ABC-ddI-LPV/r,ABC-ddI-NFV,ABC-ddI-SQV/r,ZDV-ddI-LPV/r,ZDV-ABC-LPV/r,ABC-ddI-ATV/r,AZT-3TC-ATV/r,AZT-3TC-LPV/r,ABC-3TC-DTG,ABC-3TC-LPV/r,Other"/>
-                    </small>
-                        </span>
-                                </td>
-                                <td>
-                                    <span class="ArtCareEnableDisableChild1">
-                                        <obs conceptId="99269"/>
-                                    </span>
-
-                                </td>
-                                <td class="text-nowrap" >
-                                    <a href="#" class="add  add-more-link"><i class= "icon-plus-sign"></i></a>
-                                <a href="#" class="remove remove-more-link required"> <i class="icon-minus"></i></a>
-                                </td>
-                            </tr>
-                        </obsgroup>
-                    </template>
-                    <render/>
-                    <render/>
-                    <render/>
-                    <render/>
-                    <render/>
-                </repeat>
-                </tbody>
-            </table>
-        </section>
+       
 
         <section>
             <h3>Substitutions</h3>
@@ -1643,88 +1590,88 @@
                     <b>Duration in Months</b>
                 </td>
             </tr>
-            <tr class="enableDisable">
+            <tr>
                 <obsgroup groupingConceptId="99066">
-                    <td id="trigger" class="PriorYesNoEnableDisableChild1">
+                    <td class="PriorYesNoEnableDisableChild1">
                         <obs conceptId="99056" answerConceptId="90003" answerLabel="PEP:"
                         />
                     </td>
-                    <td id="disabled">
+                    <td>
                         <div class="right-inner-addon ">
                             <i class=" icon-calendar small"></i>
-                            <obs id="second" conceptId="99154" labelText=""/>
+                            <obs conceptId="99154" labelText=""/>
                         </div>
                     </td>
-                    <td id="disabled">
-                        <obs id="third" conceptId="165252"/>
+                    <td>
+                        <obs conceptId="165252"/>
                     </td>
                 </obsgroup>
             </tr>
 
-            <tr class="enableDisable">
-                    <td id="trigger" class="PriorYesNoEnableDisableChild1">
+            <tr>
+                    <td class="PriorYesNoEnableDisableChild1">
                         <obs conceptId="165163" answerConceptId="90003" answerLabel="PreP:"
                         />
                     </td>
-                    <td id="disabled">
+                    <td>
                         <div class="right-inner-addon ">
                             <i class=" icon-calendar small"></i>
-                            <obs id="second" conceptId="165250" labelText=""/>
+                            <obs conceptId="165250" labelText=""/>
                         </div>
                     </td>
-                    <td id="disabled">
-                        <obs id="third" conceptId="165251"/>
+                    <td>
+                        <obs conceptId="165251"/>
                     </td>
             </tr>
-            <tr class="enableDisable">
+            <tr>
                 <obsgroup groupingConceptId="99598">
-                    <td id="trigger" class="PriorYesNoEnableDisableChild1">
+                    <td class="PriorYesNoEnableDisableChild1">
                         <obs conceptId="99594" answerConceptId="90003" answerLabel="Hep-B:"/>
                     </td>
-                    <td id="disabled">
+                    <td>
                         <div class="right-inner-addon ">
                             <i class=" icon-calendar small"></i>
-                            <obs id="second" conceptId="99595" labelText=""/>
+                            <obs conceptId="99595" labelText=""/>
                         </div>
                     </td>
-                    <td id="disabled">
-                        <obs id="third" conceptId="165253"/>
+                    <td>
+                        <obs conceptId="165253"/>
                     </td>
                 </obsgroup>
             </tr>
             <excludeIf velocityTest="$patient.gender =='M' ">
-                <tr class="enableDisable">
+                <tr>
                     <obsgroup groupingConceptId="99067">
-                        <td id="trigger" class="PriorYesNoEnableDisableChild1">
+                        <td class="PriorYesNoEnableDisableChild1">
                             <obs conceptId="90012" answerConceptId="90003"
                                  answerLabel="PMTCT Only:"/>
                         </td>
-                        <td id="disabled">
+                        <td>
                             <div class="right-inner-addon ">
                                 <i class=" icon-calendar small"></i>
-                                <obs id="second" conceptId="99155" labelText=""/>
+                                <obs conceptId="99155" labelText=""/>
                             </div>
                         </td>
-                        <td id="disabled">
-                            <obs id="third" conceptId="165258"/>
+                        <td>
+                            <obs conceptId="165258"/>
                         </td>
                     </obsgroup>
                 </tr>
             </excludeIf>
-            <tr class="enableDisable">
+            <tr>
                 <obsgroup groupingConceptId="99068">
-                    <td id="trigger" class="PriorYesNoEnableDisableChild1">
+                    <td class="PriorYesNoEnableDisableChild1">
                         <obs conceptId="99059" answerConceptId="90003"
                              answerLabel="Earlier ARV not transfer:"/>
                     </td>
-                    <td id="disabled">
-                        <div class="right-inner-addon ">
+                    <td>
+                        <div class="right-inner-addon ">PriorPrior
                             <i class=" icon-calendar small"></i>
-                            <obs id="second" conceptId="99156" labelText=""/>
+                            <obs conceptId="99156" labelText=""/>
                         </div>
                     </td>
-                    <td id="disabled">
-                        <obs id="third" conceptId="165259"/>
+                    <td>
+                        <obs conceptId="165259"/>
                     </td>
                 </obsgroup>
             </tr>
@@ -1733,7 +1680,7 @@
     </section>
 
     <section>
-        <h3>Art/TPT/FLUCONAZOLE/TB Interruptions</h3>
+        <h3>ART/TPT/FLUCONAZOLE/TB Interruptions</h3>
         <table class="multi table table-responsive table-striped table-borderless">
             <thead>
             <th>Treatment Type</th>
@@ -2839,60 +2786,9 @@
             </table>
         </section>
         <section>
-            <h3>ART Care</h3>
+            <h3>ART Transfer</h3>
             <table border="0" id="art-care" style="width:100%;">
                 <tbody style="display:block;">
-                <tr>
-                    <th colspan="4" style="background-color: #377F9C;color: white;text-align: center;">Start ART Baseline</th>
-                </tr>
-                <tr>
-                    <obsgroup groupingConceptId="99162">
-                        <td rowspan="3" style="width:20%;" class="ARTStartEnableDisable1">
-                            <obs conceptId="99161" labelText="Date started:"/>
-                        </td>
-                        <td rowspan="3" class="ARTStartEnableDisableChild1" style="width:20%;">
-                            <span class="ArtCareEnableDisable2">
-                            <obs conceptId="99061"
-                                 answerConceptIds="99005,99006,164979,99015,99016,99039,99040,164977,99041,99042,99884,99885,164978,163017,99143"
-                                 answerLabels="AZT-3TC-NVP, AZT-3TC-EFV,AZT-3TC-DTG, D4T-3TC-NVP, D4T-3TC-EFV, TDF-3TC-NVP, TDF-3TC-EFV, TDF-3TC-DTG, TDF-FTC-NVP, TDF-FTC-EFV,ABC-3TC-NVP,ABC-3TC-EFV,ABC-3TC-DTG,ABC-3TC-LPV/r,OTHER"
-                                 labelText="Initial Regimen"/>
-                                </span>
-                            <span class="ArtCareEnableDisableChild2">
-                                <obs conceptId="99268" labelText="Others"/>
-                            </span>
-                        </td>
-                    </obsgroup>
-                    <td style="width:20%;" class="ARTStartEnableDisableChild1">
-                        <obs conceptId="99069" labelText="Wt"/>
-                    </td>
-                    <td style="width:20%;" class="ARTStartEnableDisableChild1">
-                        <obs conceptId="99070" answerConceptIds="1204,1205,1206,1207"
-                             answerLabels="1,2,3,4" labelText="CI.Stage" style="dropdown"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="ARTStartEnableDisableChild1">
-                        <obs conceptId="99071" labelText="CD4"/>
-                    </td>
-                    <td class="ARTStartEnableDisableChild1">
-                        <excludeIf velocityTest="$patient.gender =='M' ">
-                            <obs conceptId="99072" answerConceptIds="90003,90004"
-                                 answerLabels="Y, N" labelText="Preg"/>
-                        </excludeIf>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="ARTStartEnableDisableChild1">
-                        <excludeIf velocityTest="$patient.gender =='M' ">
-                            <obs conceptId="99603" answerConceptIds="90003,90004"
-                                 answerLabels="Y, N" labelText="Lactating"/>
-                        </excludeIf>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td colspan="4" style="background: #404040; color: white;">ART Transfer</td>
-                </tr>
                 <tr>
                     <td class="ARTStartEnableDisable2">
                         <obs conceptId="99160" labelText="Date transfered:"/>
@@ -2902,11 +2798,9 @@
                     </td>
                     <td colspan="2" class="ARTStartEnableDisableChild2">
                         <span class="ArtCareEnableDisable1">
-                        <small>
                             <obs labelText="ARVs" conceptId="99064"
                                  answerConceptIds="99015,99016,99005,99006,164979,99039,99040,99041,99042,164977,99007,99008,99044,99043,99282,99283,99046,99017,99018,99019,99045,99284,99285,99286,99046,164978,163017,90002"
                                  answerLabels="d4T-3TC-NVP,d4T-3TC-EFV,AZT-3TC-NVP,AZT-3TC-EFV,AZT-3TC-DTG,TDF-3TC-NVP,TDF-3TC-EFV,TDF-FTC-NVP,TDF-FTC-EFV,TDF-3TC-DTG,ABC-ddI(250)-LPV/r,ABC-ddI(400)-LPV/r,TDF-3TC-LPV/r,TDF-FTC-LPV/r,ZDV-ddI(250)-LPV/r,ZDV-ddI(400)-LPV/r,ZDV-3TC-LPV/r,ABC-ddI-LPV/r,ABC-ddI-NFV,ABC-ddI-SQV/r,ZDV-ddI-LPV/r,ZDV-ABC-LPV/r,ABC-ddI-ATV/r,AZT-3TC-ATV/r,AZT-3TC-LPV/r,ABC-3TC-DTG,ABC-3TC-LPV/r,Other"/>
-                        </small>
                             </span>
                         <span class="ArtCareEnableDisableChild1">
                             <obs conceptId="99269" size="12" labelText="Other:"/>
@@ -3158,27 +3052,27 @@
                         <td style="color: #404040; background-color: #F3F3F3">Date</td>
                         <td style="color: #404040; background-color: #F3F3F3"></td>
                     </tr>
-                    <tr class="enableDisable">
+                    <tr>
                         <obsgroup groupingConceptId="99166">
-                            <td id="trigger">
+                            <td>
                                 <obs id="90306" conceptId="90306" answerConceptId="90003"
                                      answerLabel="Transfer out:"/>
                             </td>
-                            <td id="disabled">
+                            <td>
                                 <obs id="99165" conceptId="99165"/>
                             </td>
-                            <td id="disabled">
+                            <td>
                                 <obs conceptId="90211" labelText="Where"/>
                             </td>
                         </obsgroup>
                     </tr>
-                    <tr class="enableDisable">
+                    <tr>
                         <obsgroup groupingConceptId="99167">
-                            <td id="trigger">
+                            <td>
                                 <obs id="5240" conceptId="5240" answerConceptId="90003"
                                      answerLabel="Lost to follow-up (drop):"/>
                             </td>
-                            <td id="disabled">
+                            <td>
                                 <obs id="90209" conceptId="90209"/>
                             </td>
                             <td></td>
