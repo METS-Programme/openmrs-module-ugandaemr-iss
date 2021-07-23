@@ -1141,7 +1141,7 @@
                          <label>Patient Category:</label>
                          <span class="enableDisable">
                         <p>
-                           <obs id="patientCategory" conceptId="1163205" answerConceptIds="163141,99110" answerLabels="New to HIV Care,Transfer In">
+                           <obs id="patientCategory" conceptId="1163205" answerConceptIds="1163141,99110" answerLabels="New to HIV Care,Transfer In">
                               <controls>
                                  <when value = "99110" thenDisplay="#transferInSection" />
                               </controls>
@@ -1394,7 +1394,7 @@
                 </table>
             </div>
             </div>
-            </section>
+        </section>
         <section>
             <h3>ART Transfer In</h3>
             <table class="multi table table-borderless table-responsive">
@@ -1730,6 +1730,233 @@
             </tr>
             </tbody>
         </table>
+    </section>
+
+    <section>
+        <h3>Art/TPT/FLUCONAZOLE/TB Interruptions</h3>
+        <table class="multi table table-responsive table-striped table-borderless">
+            <thead>
+            <th>Treatment Type</th>
+            <th>Interruption (Stop/Lost)</th>
+            <th>Stop Date</th>
+            <th>Why</th>
+            <th class="text-nowrap">Date if Restart/Re-activated</th>
+            <th></th>
+            </thead>
+            <tbody>
+            <repeat>
+                <template>
+                    <obsgroup groupingConceptId="165232">
+                        <tr>
+                            <td>
+                                <div class="ARTTreatmentInterruptionEnableDisable1">
+
+                                    <obs conceptId="165228" answerConceptIds="99132,165225,747,58"
+                                         answerLabels="ART,TPT,Fluconazole,TB Drugs"/>
+                                </div>
+                            </td>
+                            <td >
+                                <span class="ARTTreatmentInterruptionEnableDisable2">
+
+                                            <obs conceptId="165229" answerConceptIds="1363,99133"
+                                                 answerLabels="Stopped,  Lost"/>
+                                        </span>
+                            </td>
+                            <td>
+                                <div class="right-inner-addon ">
+                                    <i class=" icon-calendar small"></i>
+                                    <obs conceptId="165230" />
+                                </div>
+                            </td>
+                            <td>
+                                    <obs conceptId="165231" labelText=""
+                                         answerConceptIds="90040,90046,90158,90050,90045,90051,90052,90066,99289,90002"
+                                         answerLabels="1.Toxicity/side effects,2.Treatment Failure,3. Poor Adherence, 4.Illness/hospitalization, 5.Drug out of stock, 6.Patient lacks Finances, 7. Other patient decision, 8.Patient Rx interruption intpn, 9.Excluded HIV Infection, 10.Other,"/>
+                            </td>
+                            <td>
+                                <div class="right-inner-addon ">
+                                    <i class=" icon-calendar small"></i>
+                                    <obs conceptId="160738"/>
+                                </div>
+
+                            </td>
+                            <td align="center" class="text-nowrap">
+                                <a href="#" class="add  add-more-link"><i class= "icon-plus-sign"></i></a>
+                                <a href="#" class="remove remove-more-link required"> <i class="icon-minus"></i></a>
+                            </td>
+                        </tr>
+                    </obsgroup>
+                </template>
+                <render />
+                <render />
+                <render />
+                <render />
+                <render />
+                <render />
+            </repeat>
+            </tbody>
+        </table>
+    </section>
+    <p></p>
+    <section>
+        <h3>TPT Initiation/Completion Dates</h3>
+        <div class="card">
+            <div class="card-body TPTEnableDisable">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Date TPT started: </label>
+                        <div class="right-inner-addon ">
+                            <i class=" icon-calendar small right-inner-addon-row"></i>
+                            <obs id="165226" conceptId="165226"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Date TPT Completed: </label>
+                        <div class="right-inner-addon ">
+                            <i class=" icon-calendar small right-inner-addon-row"></i>
+                            <obs id="165227" conceptId="165227"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Periodic Screening (semi Annual)</h3> 
+        <div class="card">
+        <div class="card-body">
+            <div>
+                <table class="multi table table-striped table-borderless">
+                    <thead>
+                    <th></th>
+                    <th>Date Tested </th>
+                    <th>Result</th>
+                    <th></th>
+                    </thead>
+                    <tbody>
+                    <repeat>
+                        <template>
+                            <obsgroup groupingConceptId="165255">
+                                <tr>
+                                    <td class="col-md-3">
+                                        <div>
+                                            Hep-B
+                                        </div>
+                                    </td>
+                                    <td class="col-md-3">
+                                <span>
+                                    <div class="right-inner-addon ">
+                                        <i class=" icon-calendar small"></i>
+                                        <obs conceptId="165247" />
+                                    </div>
+
+                                </span>
+                                    </td>
+                                    <td class="col-md-3">
+                                        <obs conceptId="1322"
+                                             answerConceptIds="703,664,1138" />
+                                    </td>
+                                    <td align="center" class="text-nowrap">
+                                        <a href="#" class="add  add-more-link"><i class= "icon-plus-sign"></i></a>
+                                        <a href="#" class="remove remove-more-link required"> <i class="icon-minus"></i></a>
+                                    </td>
+                                </tr>
+                            </obsgroup>
+                        </template>
+                        <render />
+                        <render />
+                        <render />
+                        <render />
+                        <render />
+                        <render />
+                    </repeat>
+                    </tbody>
+                </table>
+            </div>
+
+            <div>
+                <table class="multi table table-striped table-borderless">
+                    <tbody>
+                    <repeat>
+                        <template>
+                            <obsgroup groupingConceptId="165256">
+                                <tr>
+                                    <td class="col-md-3">
+                                        <div>
+                                            Hep-C
+                                        </div>
+                                    </td>
+                                    <td class="col-md-3">
+                                <span>
+                                    <div class="right-inner-addon ">
+                                        <i class=" icon-calendar small"></i>
+                                        <obs conceptId="165248" />
+                                    </div>
+
+                                </span>
+                                    </td>
+                                    <td class="col-md-3">
+                                        <obs conceptId="1325"
+                                             answerConceptIds="703,664,1138" />
+                                    </td>
+                                    <td align="center" class="text-nowrap">
+                                        <a href="#" class="add  add-more-link"><i class= "icon-plus-sign"></i></a>
+                        <a href="#" class="remove remove-more-link required"> <i class="icon-minus"></i></a>
+                                    </td>
+                                </tr>
+                            </obsgroup>
+                        </template>
+                        <render />
+                        <render />
+                        <render />
+                        <render />
+                        <render />
+                        <render />
+                    </repeat>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <table class="multi table table-striped table-borderless">
+                    <tbody>
+                    <repeat>
+                        <template>
+                            <obsgroup groupingConceptId="165257">
+                                <tr>
+                                    <td class="col-md-3">
+                                        <div>
+                                            Random Blood Sugar
+                                        </div>
+                                    </td>
+                                    <td class="col-md-3">
+                                <span>
+                                    <div class="right-inner-addon ">
+                                        <i class=" icon-calendar small"></i>
+                                        <obs conceptId="165249" />
+                                    </div>
+                                </span>
+                                    </td>
+                                    <td class="col-md-3">
+                                        <obs conceptId="165254"/>
+                                    </td>
+                                    <td align="center" class="text-nowrap">
+                                        <a href="#" class="add  add-more-link"><i class= "icon-plus-sign"></i></a>
+                                        <a href="#" class="remove remove-more-link required"> <i class="icon-minus"></i></a>
+                                    </td>
+                                </tr>
+                            </obsgroup>
+                        </template>
+                        <render />
+                        <render />
+                        <render />
+                        <render />
+                        <render />
+                        <render />
+                    </repeat>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
     </section>
 
         <section>
