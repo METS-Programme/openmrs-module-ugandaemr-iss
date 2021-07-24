@@ -95,11 +95,6 @@
             margin: 1px 0px;
         }
 
-        input[type=radio] {
-            display: inline-block;
-            float: none !important;
-        }
-
         .hasInlineLabels label {
             display: inline-block;
         }
@@ -1484,7 +1479,7 @@
             <table>
                 <tbody>
                     <tr>
-                        <td style="background: #F3F3F3;padding: 20px; text-align: center;" colspan="2">
+                        <td style="background: #F3F3F3;padding: 20px;" colspan="2">
                             POV Assessement
                         </td>
                     </tr>
@@ -1512,7 +1507,7 @@
             <table>
                 <tbody>
                     <tr>
-                        <td style="width: 5%;background: #F3F3F3;padding: 20px; text-align: center;" colspan="3">
+                        <td style="width: 5%;background: #F3F3F3;padding: 20px;" colspan="3">
                             Action Taken
                         </td>
                     </tr>
@@ -1598,54 +1593,12 @@
                                     </tr>
                                     <tr>
                                         <td colspan="3">
-                                            <obs cols="30" rows="3" conceptId="1163270" labelText="Significant Positive findings on examination"/>
+                                            <label>Significant Positive findings on examination</label>
+                                            <obs cols="30" rows="3" conceptId="1163270" />
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
-                        </td>
-                        <td class="lablex2">
-                            <b>Other Actions</b>
-                            <br/>
-                            <obs id="transfer" conceptId="90306" answerConceptId="90003"
-                                 answerLabel="Transferred out"/>
-                            <obs conceptId="90211" labelText="To:"/>
-                            <span id="review">
-                                <obs conceptId="1163264" answerConceptId="90003"
-                                    answerLabel="Requested Counselling"/>
-                                <obs conceptId="1163268" answerConceptId="90003"
-                                    answerLabel="Treated current OIs"/>
-                                <obs conceptId="1358" answerConceptId="1362"
-                                    answerLabel="Started on ART"/>
-                                <obs conceptId="1163265" answerConceptId="90003"
-                                    answerLabel="Initiate POV"/>
-                                <obs conceptId="1163266" allowFutureDates="true" labelText="POV date:"/>
-                                <obs conceptId="1163267" answerConceptId="90003"
-                                    answerLabel="Re-Evaluate on next visit"/>
-                                <!-- <obs size="30" conceptId="1163269" labelText="Issues to Re-Evaluate on next visit"/> -->
-                                
-                                
-                            </span>
-                        </td>
-                        <td class="lablex2">
-                            <b>Referred for</b>
-                            <br/>
-                            <obs conceptId="99054" answerConceptId="99053"
-                                 answerLabel="Theraputic Feeding"/>
-                            <obs conceptId="99054" answerConceptId="99051"
-                                 answerLabel="Infant F C"/>
-                            <obs conceptId="99054" answerConceptId="99052"
-                                 answerLabel="Nutrition C"/>
-                            <obs conceptId="99054" answerConceptId="99050"
-                                 answerLabel="Food Support"/>
-                            <br/>
-                            <obs size="15" conceptId="99267" labelText="Other referral:"/>
-                            <br/>
-                            <obs conceptId="1151" answerConceptIds="5526,99089,6046"
-                                 answerLabels="EBF,RF,MF" labelText="Infant feeding"/>
-                            <br/>
-                            <obs conceptId="90224" labelText="# Hospitalized days:">
-                            </obs>
                         </td>
                     </tr>
                 </tbody>
@@ -1667,7 +1620,7 @@
                                 <obs conceptId="160288" answerConceptId="5497"   answerLabel="CD4" class="col-md-3"/>
                                 <obs conceptId="160288" answerConceptId="163153"  answerLabel="IAC" class="col-md-3"/>
                                 <obs conceptId="160288" answerConceptId="164971"     answerLabel="T.B Drug Refill" class="col-md-3"/>
-                                <!-- <obs conceptId="160288" answerConceptId="164973"  answerLabel="T.B Follow up" class="col-md-3"/> -->
+                                <obs conceptId="160288" answerConceptId="164973"  answerLabel="T.B Follow up" class="col-md-3"/>
                                 <obs conceptId="160288" answerConceptId="99324"  answerLabel="ANC" class="col-md-3"/>
                                 <obs conceptId="160288" answerConceptId="164974"  answerLabel="EID" class="col-md-3"/>
                                 <obs conceptId="160288" answerConceptId="90012"     answerLabel="PMTCT" class="col-md-3"/>
@@ -1675,7 +1628,7 @@
                                 <obs conceptId="160288" answerConceptId="5484"  answerLabel="Nutrition" class="col-md-3"/>
                                 <obs id="check-other-reason-for-next-appointment" conceptId="160288" answerConceptId="90002"  answerLabel="Other Specify" class="col-md-3"/>
                                 <obs id="other-reason-for-next-appointment" conceptId="164975"
-                                    labelText="Other Reason for next appointment" class="col-md-5"/>
+                                    labelText="Other Reason for next appointment" class="col-md-3"/>
 
                                 <excludeIf velocityTest="$patient.person.dead == true">
                                     <obs id="appointmentDate" conceptId="5096" required="false" allowFutureDates="true" labelText="Re-evaluation date:" lass="col-md-3"/>
@@ -1716,61 +1669,61 @@
             </table>
         </section>
 
-        <section>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td style="width: 5%;background: #F3F3F3;padding: 20px; text-align: center;" colspan="3">
-                                Refferal
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="lablex2">
-                                <b>Other Actions</b>
-                                <br/>
-                                <div class="row">
-                                    <obs id="transfer" conceptId="90306" answerConceptId="90003"
-                                         answerLabel="Transferred out" class="col-md-3"/>
-                                    <obs conceptId="90211" labelText="To:" class="col-md-3"/>
-                                </div>
-                                <span id="review">
-                                    <obs conceptId="1163264" answerConceptId="90003"
-                                        answerLabel="Requested Counselling"/>
-                                    <obs conceptId="1163268" answerConceptId="90003"
-                                        answerLabel="Treated current OIs"/>
-                                    <obs conceptId="1358" answerConceptId="1362"
-                                        answerLabel="Started on ART"/>
-                                    <obs conceptId="1163265" answerConceptId="90003"
-                                        answerLabel="Initiate POV"/>
-                                    <obs conceptId="1163266" allowFutureDates="true" labelText="POV date:"/>
-                                    <!-- <obs conceptId="1163267" answerConceptId="90003"
-                                        answerLabel="Re-Evaluate on next visit"/> -->
-                                    <!-- <obs size="30" conceptId="1163269" labelText="Issues to Re-Evaluate on next visit"/> -->
-                                </span>
-                            </td>
-                            <td class="lablex2">
-                                <b>Referred for</b>
-                                <br/>
-                                <obs conceptId="99054" answerConceptId="99053"
-                                     answerLabel="Theraputic Feeding"/>
-                                <obs conceptId="99054" answerConceptId="99051"
-                                     answerLabel="Infant F C"/>
-                                <obs conceptId="99054" answerConceptId="99052"
-                                     answerLabel="Nutrition C"/>
-                                <obs conceptId="99054" answerConceptId="99050"
-                                     answerLabel="Food Support"/>
-                                <br/>
-                                <obs size="15" conceptId="99267" labelText="Other referral:"/>
-                                <br/>
-                                <obs conceptId="1151" answerConceptIds="5526,99089,6046"
-                                     answerLabels="EBF,RF,MF" labelText="Infant feeding"/>
-                                <br/>
-                                <obs conceptId="90224" labelText="# Hospitalized days:">
-                                </obs>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+        <section id="referral">
+            <div class="card">
+                <div class="card-header">Refferal</div>
+                    <div class="card-body">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="lablex2">
+                                        <b>Other Actions</b>
+                                        <br/>
+                                        <div class="row">
+                                            <obs id="transfer" conceptId="90306" answerConceptId="90003"
+                                                 answerLabel="Transferred out" class="col-md-2"/>
+                                            <obs conceptId="90211" labelText="To:" class="col-md-3"/>
+                                        </div>
+                                        <div class="row">
+                                            <span id="review">
+                                                <obs conceptId="1163264" answerConceptId="90003"
+                                                    answerLabel="Requested Counselling" class="col-md-2"/>
+                                                <obs conceptId="1163268" answerConceptId="90003"
+                                                    answerLabel="Treated current OIs" class="col-md-2"/>
+                                                <obs conceptId="1358" answerConceptId="1362"
+                                                    answerLabel="Started on ART" class="col-md-2"/>
+                                            </span>
+                                        </div>
+                                        <div class="row">
+                                            <obs conceptId="1163265" answerConceptId="90003"
+                                                answerLabel="Initiate POV" class="col-md-3"/>
+                                            <obs conceptId="1163266" allowFutureDates="true" labelText="POV date:" class="col-md-3"/>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <b>Referred for</b>
+                                        <br/>
+                                        <div class="row">
+                                            <obs conceptId="99054" answerConceptId="99053"
+                                                 answerLabel="Theraputic Feeding"/>
+                                            <obs conceptId="99054" answerConceptId="99051"
+                                                 answerLabel="Infant F C"/>
+                                            <obs conceptId="99054" answerConceptId="99052"
+                                                 answerLabel="Nutrition C"/>
+                                            <obs conceptId="99054" answerConceptId="99050"
+                                                 answerLabel="Food Support"/>
+                                        </div>
+                                        <obs size="15" conceptId="99267" labelText="Other referral:"/>
+                                        <obs conceptId="1151" answerConceptIds="5526,99089,6046"
+                                             answerLabels="EBF,RF,MF" labelText="Infant feeding"/>
+                                        <obs conceptId="90224" labelText="# Hospitalized days:">
+                                        </obs>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </section>
 
             <section>
@@ -1801,14 +1754,15 @@
                 jQuery('#fifthSection').css('display','none');
                 jQuery('#sixthSection').css('display','none');
 
-                <!-- jQuery('#appointmentSection').css('display','none');
+                jQuery('#appointmentSection').css('display','none');
                 jQuery('#diagnosisSection').css('display','none');
                 jQuery('#advancedDiseaseSection').css('display','none');
                 jQuery('#hepatitisBStatusSection').css('display','none');
                 jQuery('#fluconazoleSection').css('display','none');
                 jQuery('#essentialMedicationsSection').css('display','none');
                 jQuery('#otherMedicationsSection').css('display','none');
-                jQuery('#dsdmSection').css('display','none'); -->
+                jQuery('#dsdmSection').css('display','none');
+                jQuery('#referral').css('display','none');
             }
 
 
@@ -1830,6 +1784,7 @@
                 jQuery('#essentialMedicationsSection').css('display','block');
                 jQuery('#otherMedicationsSection').css('display','block');
                 jQuery('#dsdmSection').css('display','block');
+                jQuery('#referral').css('display','block');
             }
 
             if (visitTypeValue == 1163175) {
@@ -1850,6 +1805,7 @@
                 jQuery('#essentialMedicationsSection').css('display','block');
                 jQuery('#otherMedicationsSection').css('display','block');
                 jQuery('#dsdmSection').css('display','block');
+                jQuery('#referral').css('display','block');
             }
 
             if (visitTypeValue == 1163312) {
@@ -1870,6 +1826,7 @@
                 jQuery('#essentialMedicationsSection').css('display','block');
                 jQuery('#otherMedicationsSection').css('display','block');
                 jQuery('#dsdmSection').css('display','block');
+                jQuery('#referral').css('display','block');
             }
 
             if (visitTypeValue == 1163313) {
@@ -1890,6 +1847,7 @@
                 jQuery('#essentialMedicationsSection').css('display','block');
                 jQuery('#otherMedicationsSection').css('display','block');
                 jQuery('#dsdmSection').css('display','block');
+                jQuery('#referral').css('display','block');
             }
 
             var TBprophylaxisValue = jQuery("#TBprophylaxis option:selected").val();
@@ -1914,6 +1872,15 @@
         jQuery('#forthSection').css('display','none');
         jQuery('#fifthSection').css('display','none');
         jQuery('#sixthSection').css('display','none');
+        jQuery('#appointmentSection').css('display','none');
+        jQuery('#diagnosisSection').css('display','none');
+        jQuery('#advancedDiseaseSection').css('display','none');
+        jQuery('#hepatitisBStatusSection').css('display','none');
+        jQuery('#fluconazoleSection').css('display','none');
+        jQuery('#essentialMedicationsSection').css('display','none');
+        jQuery('#otherMedicationsSection').css('display','none');
+        jQuery('#dsdmSection').css('display','none');
+        jQuery('#referral').css('display','none');
         }
 
 
@@ -1926,6 +1893,15 @@
         jQuery('#forthSection').css('display','block');
         jQuery('#fifthSection').css('display','block');
         jQuery('#sixthSection').css('display','block');
+        jQuery('#appointmentSection').css('display','block');
+        jQuery('#diagnosisSection').css('display','block');
+        jQuery('#advancedDiseaseSection').css('display','block');
+        jQuery('#hepatitisBStatusSection').css('display','block');
+        jQuery('#fluconazoleSection').css('display','block');
+        jQuery('#essentialMedicationsSection').css('display','block');
+        jQuery('#otherMedicationsSection').css('display','block');
+        jQuery('#dsdmSection').css('display','block');
+        jQuery('#referral').css('display','block');
         }
 
         if (visitTypeValue == 1163175) {
@@ -1937,6 +1913,15 @@
         jQuery('#forthSection').css('display','block');
         jQuery('#fifthSection').css('display','block');
         jQuery('#sixthSection').css('display','block');
+        jQuery('#appointmentSection').css('display','block');
+        jQuery('#diagnosisSection').css('display','block');
+        jQuery('#advancedDiseaseSection').css('display','block');
+        jQuery('#hepatitisBStatusSection').css('display','block');
+        jQuery('#fluconazoleSection').css('display','block');
+        jQuery('#essentialMedicationsSection').css('display','block');
+        jQuery('#otherMedicationsSection').css('display','block');
+        jQuery('#dsdmSection').css('display','block');
+        jQuery('#referral').css('display','block');
         }
 
         if (visitTypeValue == 1163312) {
@@ -1948,6 +1933,15 @@
         jQuery('#forthSection').css('display','block');
         jQuery('#fifthSection').css('display','none');
         jQuery('#sixthSection').css('display','block');
+        jQuery('#appointmentSection').css('display','block');
+        jQuery('#diagnosisSection').css('display','block');
+        jQuery('#advancedDiseaseSection').css('display','block');
+        jQuery('#hepatitisBStatusSection').css('display','block');
+        jQuery('#fluconazoleSection').css('display','block');
+        jQuery('#essentialMedicationsSection').css('display','block');
+        jQuery('#otherMedicationsSection').css('display','block');
+        jQuery('#dsdmSection').css('display','block');
+        jQuery('#referral').css('display','block');
         }
 
         if (visitTypeValue == 1163313) {
@@ -1959,6 +1953,15 @@
         jQuery('#forthSection').css('display','block');
         jQuery('#fifthSection').css('display','none');
         jQuery('#sixthSection').css('display','block');
+        jQuery('#appointmentSection').css('display','block');
+        jQuery('#diagnosisSection').css('display','block');
+        jQuery('#advancedDiseaseSection').css('display','block');
+        jQuery('#hepatitisBStatusSection').css('display','block');
+        jQuery('#fluconazoleSection').css('display','block');
+        jQuery('#essentialMedicationsSection').css('display','block');
+        jQuery('#otherMedicationsSection').css('display','block');
+        jQuery('#dsdmSection').css('display','block');
+        jQuery('#referral').css('display','block');
         }
 
         });
