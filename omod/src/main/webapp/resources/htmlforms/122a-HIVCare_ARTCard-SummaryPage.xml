@@ -1057,14 +1057,9 @@
             display:inline-block;
         }
 
-      input[type=radio] {
+        form label {
             display:inline-block;
-            float:none !important;
-       }
-
-      form label {
-            display:inline-block;
-       }
+        }
 
         <!-- .row {
             display: inline-flex;
@@ -1576,11 +1571,11 @@
                     <obs conceptId="99055" answerConceptIds="90003,90004"
                          answerLabels="Yes,No"/>
                 </td>
-
+                <td>
+                </td>
             </tr>
             <tr>
                 <td>
-
                 </td>
                 <td>
                     <b>Start Date</b>
@@ -1590,57 +1585,57 @@
                     <b>Duration in Months</b>
                 </td>
             </tr>
-            <tr>
+            <tr class="enableDisable">
                 <obsgroup groupingConceptId="99066">
-                    <td class="PriorYesNoEnableDisableChild1">
+                    <td id="trigger" class="PriorYesNoEnableDisableChild1">
                         <obs conceptId="99056" answerConceptId="90003" answerLabel="PEP:"
                         />
                     </td>
                     <td>
                         <div class="right-inner-addon ">
                             <i class=" icon-calendar small"></i>
-                            <obs conceptId="99154" labelText=""/>
+                            <obs conceptId="99154" labelText="" id="disabled"/>
                         </div>
                     </td>
                     <td>
-                        <obs conceptId="165252"/>
+                        <obs conceptId="165252" id="disabled"/>
                     </td>
                 </obsgroup>
             </tr>
 
-            <tr>
-                    <td class="PriorYesNoEnableDisableChild1">
+            <tr class="enableDisable">
+                    <td id="trigger" class="PriorYesNoEnableDisableChild1">
                         <obs conceptId="165163" answerConceptId="90003" answerLabel="PreP:"
                         />
                     </td>
                     <td>
                         <div class="right-inner-addon ">
                             <i class=" icon-calendar small"></i>
-                            <obs conceptId="165250" labelText=""/>
+                            <obs conceptId="165250" labelText="" id="disabled"/>
                         </div>
                     </td>
                     <td>
-                        <obs conceptId="165251"/>
+                        <obs conceptId="165251" id="disabled"/>
                     </td>
             </tr>
-            <tr>
+            <tr class="enableDisable">
                 <obsgroup groupingConceptId="99598">
-                    <td class="PriorYesNoEnableDisableChild1">
+                    <td id="trigger" class="PriorYesNoEnableDisableChild1">
                         <obs conceptId="99594" answerConceptId="90003" answerLabel="Hep-B:"/>
                     </td>
                     <td>
                         <div class="right-inner-addon ">
                             <i class=" icon-calendar small"></i>
-                            <obs conceptId="99595" labelText=""/>
+                            <obs conceptId="99595" labelText="" id="disabled"/>
                         </div>
                     </td>
                     <td>
-                        <obs conceptId="165253"/>
+                        <obs conceptId="165253" id="disabled"/>
                     </td>
                 </obsgroup>
             </tr>
             <excludeIf velocityTest="$patient.gender =='M' ">
-                <tr>
+                <tr id="trigger" class="enableDisable">
                     <obsgroup groupingConceptId="99067">
                         <td class="PriorYesNoEnableDisableChild1">
                             <obs conceptId="90012" answerConceptId="90003"
@@ -1649,29 +1644,29 @@
                         <td>
                             <div class="right-inner-addon ">
                                 <i class=" icon-calendar small"></i>
-                                <obs conceptId="99155" labelText=""/>
+                                <obs conceptId="99155" labelText="" id="disabled"/>
                             </div>
                         </td>
                         <td>
-                            <obs conceptId="165258"/>
+                            <obs conceptId="165258" id="disabled"/>
                         </td>
                     </obsgroup>
                 </tr>
             </excludeIf>
-            <tr>
+            <tr class="enableDisable">
                 <obsgroup groupingConceptId="99068">
-                    <td class="PriorYesNoEnableDisableChild1">
+                    <td id="trigger" class="PriorYesNoEnableDisableChild1">
                         <obs conceptId="99059" answerConceptId="90003"
                              answerLabel="Earlier ARV not transfer:"/>
                     </td>
                     <td>
                         <div class="right-inner-addon ">PriorPrior
                             <i class=" icon-calendar small"></i>
-                            <obs conceptId="99156" labelText=""/>
+                            <obs conceptId="99156" labelText="" id="disabled"/>
                         </div>
                     </td>
                     <td>
-                        <obs conceptId="165259"/>
+                        <obs conceptId="165259" id="disabled"/>
                     </td>
                 </obsgroup>
             </tr>
