@@ -54,7 +54,7 @@
             border: 1px solid #AFAFAF;
         }
     </style>
-    <div class="ai-page-frame">
+    <div>
         <div class="headers" style="text-align: center;">
             <h3 style="background: #FFFF7D; padding: 10px;">MOLECULAR LAB ENTRY FORM</h3>
         </div>
