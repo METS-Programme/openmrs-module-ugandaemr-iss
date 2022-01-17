@@ -65,7 +65,7 @@
                     enable_disable('163170', '163171', '5622');
                 });
 
-                // Enable disable other decision
+                // Enable disable other clinic decision
                 jq('#163166').change(function () {
                     enable_disable('163166', '163168', '5622');
                 });
@@ -74,6 +74,23 @@
                     enable_disable('163166', '163168', '5622');
                 });
 
+                // Enable disable other regimen
+                jq('#90315').change(function () {
+                    enable_disable('90315', '99126', '90002');
+                });
+
+                jq('#90315').each(function () {
+                    enable_disable('90315', '99126', '90002');
+                });
+
+                // Enable disable other decision
+                jq('#163166').change(function () {
+                    enable_disable('163166', '163168', '5622');
+                });
+
+                jq('#163166').each(function () {
+                    enable_disable('163166', '163168', '5622');
+                });                
 
                 jq('#1305_1').change(function () {
                     enable_disable('1305_1', '856_1', '1301');
@@ -418,6 +435,40 @@
                              answerLabels="Yes,No" required="true" style="radio"/>
                     </td>
                 </tr>
+                <tr>
+                    <td style="width: 15%;background: #F3F3F3;">
+                            <label>Date Results given to Client</label>
+                            <obs id="163156" conceptId="163156" allowFutureDates="false" required="true"/>
+                    </td>
+                    <td style="width: 15%;background: #F3F3F3;">
+                            <label>Date of the sample collection</label>
+                            <obs id="165820" conceptId="165820" allowFutureDates="false" required="true" />
+                    </td>
+                    <td style="width: 15%;background: #F3F3F3;">
+                            <label>CD4 Test Results </label>
+                            <obs conceptId="5497"
+                                 allowFutureDates="false"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="width: 15%;background: #F3F3F3;">
+                        <label>Treated with Fluconazole</label>
+                        <obs conceptId="165821" answerConceptIds="1065,1066,1175" />
+                    </td>
+                    <td style="width: 15%;background: #F3F3F3;">
+                        <label >TB LAM Results</label>
+                        <obs id="165291" conceptId="165291" />
+                    </td>
+                    <td style="width: 15%;background: #F3F3F3;">
+                        <label>TB LAM Test</label>
+                          <obs id="165822" conceptId="165822" answerConceptIds="1065,1066" />
+                    </td>
+                    <td style="width: 15%;background: #F3F3F3;">
+                        <label> TB Treatment</label>
+                            <obs conceptId="90216" answerConceptIds="90071,165439"  answerLabels="Yes,No"/>
+                    </td>
+                </tr>
                 </tbody>
             </table>
         </fieldset>
@@ -502,6 +553,16 @@
                             <obs id="163150_2" conceptId="163150" allowFutureDates="false"/>
                         </td>
                     </obsgroup>
+                </tr>                
+                <tr>
+                    <td style="width: 15%;background: #F3F3F3;" colspan="2">
+                        <label>HIVDR Results </label>
+                        <obs conceptId="165824" />
+                    </td>
+                    <td>
+                    <label>Date HIVDR results Recieved at facility</label>
+                        <obs conceptId="165823" />
+                    </td>
                 </tr>
 
                 </tbody>
@@ -527,7 +588,7 @@
                     <td style="width: 15%;background: #F3F3F3;" colspan="2">
                         <label>Decision date</label>
                         <obs id="163167" conceptId="163167" allowFutureDates="false"/>
-                    </td>
+                    </td>                    
                 </tr>
                 <obsgroup groupingConceptId="163169">
                     <tr>
@@ -537,9 +598,19 @@
                                  answerConceptIds="99015,99016,99005,99006,164979,99039,99040,164977,99041,99042,99007,99008,99044,99043,99282,99283,99046,99017,99018,99019,99045,99284,99285,99286,99884,99885,164978,99888,163017,99887,90002"
                                  answerLabels="d4T-3TC-NVP,d4T-3TC-EFV,AZT-3TC-NVP,AZT-3TC-EFV,AZT-3TC-DTG,TDF-3TC-NVP,TDF-3TC-EFV,TDF-3TC-DTG,TDF-FTC-NVP,TDF-FTC-EFV,ABC-ddI(250)-LPV/r,ABC-ddI(400)-LPV/r,TDF-3TC-LPV/r,TDF-FTC-LPV/r,ZDV-ddI(250)-LPV/r,ZDV-ddI(400)-LPV/r,AZT-3TC-LPV/r,ABC-ddI-LPV/r,ABC-ddI-NFV,ABC-ddI-SQV/r,ZDV-ddI-LPV/r,AZT-ABC-LPV/r,ABC-ddI-ATV/r,AZT-3TC-ATV/r,ABC-3TC-NVP,ABC-3TC-EFV,ABC-3TC-DTG,ABC-3TC-ATV/r,ABC-3TC-LPV/r,TDF-3TC-ATV/r,Other"/>
                         </td>
-                        <td style="width: 15%;background: #F3F3F3;" colspan="2">
+                        <td style="width: 15%;background: #F3F3F3;">
                             <label>Date of Initiation</label>
                             <obs conceptId="163172" allowFutureDates="false"/>
+                        </td>
+                        <td style="width: 15%;background: #F3F3F3;" >
+                            <label>New Regimen</label>
+                        <obs id="new-regimen" conceptId="90315" style="width:20px;"
+                                         answerConceptIds="99015,99016,99005,99006,164979,99039,99040,164977,99041,99042,99007,99008,99044,99043,99282,99283,99046,99017,99018,99019,99045,99284,99285,99286,99884,99885,164978,99888,163017,99887,90002"
+                                         answerLabels="d4T-3TC-NVP,d4T-3TC-EFV,AZT-3TC-NVP,AZT-3TC-EFV,AZT-3TC-DTG,TDF-3TC-NVP,TDF-3TC-EFV,TDF-3TC-DTG,TDF-FTC-NVP,TDF-FTC-EFV,ABC-ddI(250)-LPV/r,ABC-ddI(400)-LPV/r,TDF-3TC-LPV/r,TDF-FTC-LPV/r,ZDV-ddI(250)-LPV/r,ZDV-ddI(400)-LPV/r,AZT-3TC-LPV/r,ABC-ddI-LPV/r,ABC-ddI-NFV,ABC-ddI-SQV/r,ZDV-ddI-LPV/r,AZT-ABC-LPV/r,ABC-ddI-ATV/r,AZT-3TC-ATV/r,ABC-3TC-NVP,ABC-3TC-EFV,ABC-3TC-DTG,ABC-3TC-ATV/r,ABC-3TC-LPV/r,TDF-3TC-ATV/r,Other"/>
+                        </td>
+                        <td style="width: 15%;background: #F3F3F3;" >
+                            <label>Other Specify</label>
+                            <obs id="new-regimen-other" conceptId="99126"/>
                         </td>
                     </tr>
                 </obsgroup>
@@ -559,6 +630,23 @@
                         <label>Comment</label>
                         <br/>
                         <obs style="textarea" conceptId="163173" rows="8" cols="80"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="width: 15%;background: #F3F3F3;">
+                        <label>Date of Initiation</label>
+                        <obs conceptId="163172" allowFutureDates="false"/>
+                    </td>
+                    <td style="width: 15%;background: #F3F3F3;">
+                        <label>Clinical decision</label>
+                        <obs id="163166" conceptId="163166"
+                        answerConceptIds="163160,163161,163162,163163,163164,163165,5622"
+                        answerLabels="1. Suppressed and continues with 1st line regimen,2. Suppressed and Continue with 2nd line,3. Non-suppressed Switch to 2nd line,4. Non-suppressed Referred for HIV resistance testing,5. Non-suppressed Referred for 3rd line regimen,6. Treat as per resistance profile,7. Other"/>
+                    </td>
+                    <td style="width: 15%;background: #F3F3F3;">
+                        <label>Other Clinic Decision</label>
+                        <obs id="163168" conceptId="163168"/>
                     </td>
                 </tr>
                 </tbody>
