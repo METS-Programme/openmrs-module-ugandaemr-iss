@@ -33,7 +33,7 @@
 			org.openmrs.module.appui
 		</require_module>
 		<require_module version="${ugandaemrVersion}">
-			org.openmrs.module.aijar
+			org.openmrs.module.ugandaemr
 		</require_module>
 		<require_module version="${attachmentVersion}">
 			org.openmrs.module.attachments
