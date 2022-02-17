@@ -15,11 +15,11 @@ import org.openmrs.api.context.Context;
 import org.openmrs.module.BaseModuleActivator;
 import org.openmrs.module.Module;
 import org.openmrs.module.ModuleFactory;
-import org.openmrs.module.aijar.activator.HtmlFormsInitializer;
-import org.openmrs.module.aijar.activator.Initializer;
 import org.openmrs.module.appframework.service.AppFrameworkService;
 import org.openmrs.module.dataexchange.DataImporter;
 import org.openmrs.module.metadatadeploy.api.MetadataDeployService;
+import org.openmrs.module.ugandaemr.activator.HtmlFormsInitializer;
+import org.openmrs.module.ugandaemr.activator.Initializer;
 import org.openmrs.module.ugandaemr.iss.api.deploy.bundle.ISSMetadataBundle;
 
 import java.util.ArrayList;
