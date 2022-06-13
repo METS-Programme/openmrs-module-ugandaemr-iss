@@ -2,7 +2,7 @@
           formDescription="Summary entry form for patients enrolled for ART"
           formEncounterType="8d5b27bc-c2cc-11de-8d13-0010c6dffd0f"
           formUuid="52653a60-8300-4c13-be4d-4b746da06fee"
-          formVersion="2.1"
+          formVersion="3.1"
           formAddMetadata="yes"
           formUILocation="patientDashboard.visitActions"
           formOrder="1"
@@ -1749,14 +1749,14 @@
                         <label>Date TPT started: </label>
                         <div class="right-inner-addon ">
                             <i class=" icon-calendar small right-inner-addon-row"></i>
-                            <obs id="165226" conceptId="165226"/>
+                            <obs id="165226" conceptId="165226" allowFutureDates="true"/>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label>Date TPT Completed: </label>
                         <div class="right-inner-addon ">
                             <i class=" icon-calendar small right-inner-addon-row"></i>
-                            <obs id="165227" conceptId="165227"/>
+                            <obs id="165227" conceptId="165227" allowFutureDates="true"/>
                         </div>
                     </div>
                 </div>
