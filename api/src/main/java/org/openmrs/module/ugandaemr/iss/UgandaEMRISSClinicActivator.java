@@ -60,6 +60,10 @@ public class UgandaEMRISSClinicActivator extends BaseModuleActivator {
 			
 			// enable the most recent vitals
 			appFrameworkService.enableApp("coreapps.mostRecentVitals");
+			
+			//disable app inorder to add more custom concepts
+			appFrameworkService.disableApp("ugandaemr.dashboardwidget.TPTStatus");
+			
 			log.info("Completed enabling and disabling apps");
 			log.info("Started UgandaEMR ISS Clinic Module");
 			

@@ -1338,12 +1338,10 @@
                     <tbody>
                     <tr>
                         <obsgroup groupingConceptId="99162">
-                            <td class="ARTStartEnableDisable1">
                                 <div class="right-inner-addon ">
                                     <i class=" icon-calendar small start-art-icon"></i>
-                                    <obs id="99161" conceptId="99161" labelText="At Start ART:"/>
+                                    <obs id="99161" conceptId="99161" labelText="At Start ART:" allowFutureDates="true"/>
                                 </div>
-                            </td>
                             <td class="ARTStartEnableDisableChild1">
                                 <span class="ArtCareEnableDisable2">
                                 <obs conceptId="99061"

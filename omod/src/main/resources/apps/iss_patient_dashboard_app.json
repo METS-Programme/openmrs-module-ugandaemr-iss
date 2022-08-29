@@ -8,7 +8,7 @@
       "widget": "latestobsforconceptlist",
       "icon": "icon-user-md",
       "label": "LAST ART VISIT SUMMARY",
-      "concepts": "dcac04cf-30ab-102d-86b0-7a5022ba4115,160288AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,dd2b0b4d-30ab-102d-86b0-7a5022ba4115,b0e53f0a-eaca-49e6-b663-d0df61601b70,7593ede6-6574-4326-a8a6-3d742e843659,dcdff274-30ab-102d-86b0-7a5022ba4115,0b214603-049e-4e57-b871-0e937ac52fd8,bcde6791-6f4e-4af3-a1a6-60cb7feb0df9"
+      "concepts": "b9f2b7c0-2186-4a51-8b62-6380162b32b4,dc8d83e3-30ab-102d-86b0-7a5022ba4115,e17524f4-4445-417e-9098-ecdd134a6b81,dcac04cf-30ab-102d-86b0-7a5022ba4115,160288AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,dd2b0b4d-30ab-102d-86b0-7a5022ba4115,b0e53f0a-eaca-49e6-b663-d0df61601b70,7593ede6-6574-4326-a8a6-3d742e843659,dcdff274-30ab-102d-86b0-7a5022ba4115,0b214603-049e-4e57-b871-0e937ac52fd8,bcde6791-6f4e-4af3-a1a6-60cb7feb0df9"
     },
     "extensions": [
       {
@@ -69,5 +69,57 @@
         }
       }
     ]
+  },
+  {
+  "id": "ugandaemr-iss.dashboardwidget.MCHSummary",
+  "instanceOf": "coreapps.template.dashboardWidget",
+  "description": "Displays obstetric summary of mother receiving MCH services",
+  "order": 10,
+  "config": {
+    "widget": "latestobsforconceptlist",
+    "icon": "icon-user-md",
+    "label": "MCH SUMMARY",
+    "concepts": "ca7ec441-528f-4556-8aae-c4c6db40a330,d858f8cb-fe9e-4131-8d91-cd9929cc53de,5f86d19d-9546-4466-89c0-6f80c101191b,dcc39097-30ab-102d-86b0-7a5022ba4115,1053AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,dca0a383-30ab-102d-86b0-7a5022ba4115,dcc033e5-30ab-102d-86b0-7a5022ba4115,d5b0394c-424f-41db-bc2f-37180dcdbe74,dc548e89-30ab-102d-86b0-7a5022ba4115,1284AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,160081AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,5029d903-51ba-4c44-8745-e97f320739b6"
+  },
+  "requiredPrivilege": "App: ugandaemr-iss.widget.mchSummary",
+  "extensions": [
+    {
+      "id": "org.openmrs.module.coreapps.mostRecentVitals.clinicianDashboardFirstColumn",
+      "appId": "ugandaemr-iss.dashboardwidget.MCHSummary",
+      "extensionPointId": "patientDashboard.firstColumnFragments",
+      "extensionParams": {
+        "provider": "coreapps",
+        "fragment": "dashboardwidgets/dashboardWidget"
+      },
+      "require":"patient.person.gender=='F'"
+    }
+  ]
+},
+  {
+    "id": "ugandaemr-iss.dashboardwidget.TPTStatus",
+    "instanceOf": "coreapps.template.dashboardWidget",
+    "description": "Summary of the patient's TPT status",
+    "order": 5,
+    "config": {
+      "widget": "latestobsforconceptlist",
+      "icon": "icon-user-md",
+      "label": "TPT STATUS ISS",
+      "maxAge": "120m",
+      "concepts": "dce02aa1-30ab-102d-86b0-7a5022ba4115,dce02eca-30ab-102d-86b0-7a5022ba4115,dd2adde2-30ab-102d-86b0-7a5022ba4115,dce02aa1-30ab-102d-86b0-7a5022ba4115,dce02eca-30ab-102d-86b0-7a5022ba4115,dd2adde2-30ab-102d-86b0-7a5022ba4115,37d4ac43-b3b4-4445-b63b-e3acf47c8910,483939c7-79ba-4ca4-8c3e-346488c97fc7,813e21e7-4ccb-4fe9-aaab-3c0e40b6e356,23a6dc6e-ac16-4fa6-8029-155522548d04"
+    },
+    "requiredPrivilege": "App: ugandaemr-iss.widget.tptStatus",
+    "extensions": [
+      {
+        "id": "org.openmrs.module.coreapps.mostRecentVitals.clinicianDashboardFirstColumn",
+        "appId": "ugandaemr-iss.dashboardwidget.TPTStatus",
+        "extensionPointId": "patientDashboard.firstColumnFragments",
+        "extensionParams": {
+          "provider": "coreapps",
+          "fragment": "dashboardwidgets/dashboardWidget"
+        }
+      }
+    ]
   }
+
+
 ]
