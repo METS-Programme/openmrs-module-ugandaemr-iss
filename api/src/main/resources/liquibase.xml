@@ -4,6 +4,13 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+    <changeSet id="ugandaemr-11-10-2022" author="jwasswa">
+        <comment>update concept name from Condition of Breast of Mother To Condition of Cervix Cancer</comment>
+        <sql>
+            UPDATE concept_name SET name = 'Condition of Cervix Cancer' WHERE concept_id = 99350;
+        </sql>
+    </changeSet>
  
     <!--
     	See http://wiki.openmrs.org/display/docs/Module+liquibase+File for 
