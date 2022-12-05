@@ -364,7 +364,7 @@
                 
             });
 
-            jq(document).ready(function () {
+                jq(document).ready(function () {
 
                 /* Prompt if client is on TB Rx or completed it */
                 var lastTBStatus = jq("#lastTBStatus").html();
@@ -920,6 +920,9 @@
                                             <when value="703" thenDisplay="#actionTakenCancer" />
                                         </controls>
                                     </obs>
+                                    <!--Un comments the below line after migration with the core UgandaEMR-->
+                                    <!--<obs id="br" conceptId="166906" labelText="Date Screened:" allowFutureDates="true"/>-->
+
                                 </span>
                                 <span id="actionTakenCancer">
                                     <label>Action taken:</label>
@@ -1132,6 +1135,7 @@
                     <tr>
                         <td style="width: 5%;background: #F3F3F3;padding: 20px;">CPT/Dapsone</td>
                         <td style="width: 5%;background: #F3F3F3;padding: 20px;">INH</td>
+                        <td style="width: 5%;background: #F3F3F3;padding: 20px;">TPT Status</td>
                         <td style="width: 5%;background: #F3F3F3;padding: 20px;">ART Eligibility</td>
                         <td style="width: 15%;background: #F3F3F3;padding: 20px; text-align: center;" colspan="2">ARV
                             drugs
@@ -1182,6 +1186,18 @@
                                 <obs conceptId="165879" labelText="3HP End Date" allowFutureDates="true"/>
                             </span>
                             <obs conceptId="165880" labelText="Pyridoxine # Pills Dispensed:"/>
+                        </td>
+
+                        <td>
+                            <!--TPT Section -->
+                            <obs id="tpt-status" conceptId="165288"
+                                 answerConceptIds="1090,165307,90040,160035"
+                                 answerLabels="H0-Never Initiated,H1-Defaulted,H2-Taken off due to side effects,H3-Completed"/>
+
+                            <obs id="tpt-initiation-date" conceptId="165226" labelText="TPT Date Initiated" allowFutureDates="true"/>
+                            <obs id="tpt-completion-date" conceptId="165227" labelText="TPT Date Completed" allowFutureDates="true"/>
+                            <obs id="tpt-side-effects" conceptId="165792" labelText="TPT Side Effects"/>
+
                         </td>
                         <td>
                             <obs id="eligibleQn" conceptId="99415" answerConceptIds="1065,1066" answerLabels="Yes,No" labelText="On ART:" required="true" >
@@ -1560,6 +1576,32 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- ART ACCESS CONFIGURATION -->
+                    <div id="cddp_categorization" class="card">
+                        <div class="card-header">Drug Pick Up Model</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-3" id="cddp_category">
+                                    <label>CDDP Category</label>
+                                    <workflowState  workflowId="4" stateIds="16,14,15" stateLabels="General CDDP, CLDDP,CRPDDP"/>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>DSD Group Refill Point</label>
+                                    <div class="form-group">
+                                        <select class="form-control" id="refill_point_select_id" name="refill_point_select_id">
+                                            <option value="">Select Refill Point</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <obs id="refill_point_id" conceptId="166500"
+                                         labelText="DSD Group Code"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End of ART Config-->
                 </tbody>
             </table>
         </section>
@@ -1628,6 +1670,145 @@
         </div>
     <script>
         jQuery(document).ready(function() {
+
+            /*ART ACCESS CONFIGURATION*/
+            var enableCDDPCategorization = <lookup
+                expression="fn.globalProperty('ugandaemr.enableCDDPCategorization')"/>;
+
+            fieldHelper.makeReadonly(getField('refill_point_id.value'));
+            if (enableCDDPCategorization === true) {
+                showContainer("#cddp_categorization");
+            } else {
+                hideContainer("#cddp_categorization");
+            }
+
+            jq("#refill_point_select_id").attr("disabled", true);
+            disable_fields("cddp_category");
+
+            jq("#refill_point_select_id").change(function () {
+                jq("#refill_point_id input").val(this.value);
+            });
+
+            jq("#cddp_category").change(function () {
+                var cddpCategory = jq("#cddp_category").find("select").find(":selected").val();
+                setValue('refill_point_id.value', '');
+                if (cddpCategory === "a6a0ab45-b7dc-43b2-b28c-45a91f968ebf") {
+                    <!--                            CRPDDP categories fetching-->
+                    jq('#refill_point_select_id').parent('div').parent('div').find('label').html('Pharmacy');
+                    jq("#refill_point_select_id").attr("disabled", false);
+                    getCohortCategorizations("e50fa0af-df36-4a26-853f-feb05244e5ca");
+                } else if (cddpCategory === "d77cc565-5e53-4633-8fc7-956cfc1831d9") {
+                    <!--                            CLDDP categories fetching -->
+                    jq('#refill_point_select_id').parent('div').parent('div').find('label').html('CLDDP Group');
+                    jq("#refill_point_select_id").attr("disabled", false);
+                    getCohortCategorizations("aa536e57-a3c3-453c-9413-cf70b5d2ad5d");
+                } else {
+                    jq('#refill_point_select_id').parent('div').parent('div').find('label').html('DSD Refill Group');
+                    jq("#refill_point_select_id").attr("disabled", true);
+                }
+            });
+
+
+            jq("#165143 select").change(function () {
+                if (jq("#165143").find("select").find(":selected").val() === "165142") {
+                    enable_fields("cddp_category");
+                } else {
+                    setValue('refill_point_id.value', '');
+                    jq("#refill_point_select_id  option").prop("selected", false);
+                    jq("#cddp_category  option").prop("selected", false);
+                    disable_fields("cddp_category");
+                }
+            });
+
+            //ART ACCESS CONFIGURATION
+            function getCohortCategorizations(uuid) {
+                jq('#refill_point_select_id').empty();
+                jq.ajax({
+                    type: "GET",
+                    url: '/' + OPENMRS_CONTEXT_PATH + "/ws/rest/v1/cohortm/cohort?v=custom:(name,uuid,description,voided)&amp;cohortType=" + uuid,
+                    dataType: "json",
+                    contentType: "application/json",
+                    async: false,
+                    success: function (data) {
+                        var cohorts = data.results;
+                        jq('#refill_point_select_id').append($("<option ></option>").attr("value", ''));
+                        for (var i = 0; i &lt; cohorts.length; i++) {
+                            if (cohorts[i].voided === false) {
+                                jq('#refill_point_select_id').append($("<option></option>").attr("value", cohorts[i].uuid).text(cohorts[i].name));
+                            }
+                        }
+
+                    }
+                });
+            }
+
+            //ART ACCESS CONFIGURATION
+            if(enableCDDPCategorization===true){
+                var cohort = getValue('refill_point_id.value');
+                var encounterDate = new Date((getValue('encounterDate.value')));
+                var patientUUID      = '<lookup complexExpression="$patient.uuid"/>';
+                var date = encounterDate.getFullYear() + '-' + (encounterDate.getMonth() + 1) + '-' + encounterDate.getDate();
+                var DSDCategory = getValue('cddp_category.value');
+
+            if (cohort == "") {
+                if (DSDCategory === "a6a0ab45-b7dc-43b2-b28c-45a91f968ebf" || DSDCategory === "d77cc565-5e53-4633-8fc7-956cfc1831d9") {
+                    jq().toastmessage('showErrorToast', "Select at least a DSD Refill for this client");
+                    return false;
+                }
+            } else {
+                var dataToPost = "{\"patient\": \"" + patientUUID + "\", \"cohort\": \"" + cohort + "\",\"startDate\": \"" + date + "\"}";
+                jq.ajax({
+                    type: "POST",
+                    url: '/' + OPENMRS_CONTEXT_PATH + "/ws/rest/v1/cohortm/cohortmember/",
+                    dataType: "json",
+                    contentType: "application/json",
+                    accept: "application/json",
+                    data: dataToPost,
+                    success: function (data) {
+                        jq().toastmessage('showSuccessToast', "Client Added to a Refill Group Successfully");
+                    },
+                    error: function (response) {
+                        if (cohort !== "") {
+                            var errorMessage = response.responseJSON.error.message;
+                            if (errorMessage.indexOf("already exists") > 0) {
+                                jq().toastmessage('showSuccessToast', response.responseJSON.error.message);
+                            } else {
+                                jq().toastmessage('showErrorToast', response.responseJSON.error.message);
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        /*End of ART Access */
+
+        /*TPT status validations*/
+            jq("#tpt-status").change(function () {
+                if (jq(this).find("select").find(":selected").val() == "90072") {
+                    enable_fields("tpt-initiation-date");
+                } else {
+                    disable_fields("tpt-initiation-date");
+                }
+            });
+
+            jq("#tpt-status").change(function () {
+                if (jq(this).find("select").find(":selected").val() == "160035") {
+                    enable_fields("tpt-completion-date");
+                } else {
+                    disable_fields("tpt-completion-date");
+                }
+            });
+
+            jq("#tpt-status").change(function () {
+                if (jq(this).find("select").find(":selected").val() == "90040") {
+                    enable_fields("tpt-side-effects");
+                } else {
+                    disable_fields("tpt-side-effects");
+                }
+            });
+
+
             var visitTypeValue = getValue('visitType.value');
             if (visitTypeValue == '') {
                 jQuery('#reasonForNotComing').css('display','none');

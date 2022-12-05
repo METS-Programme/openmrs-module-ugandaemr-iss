@@ -80,6 +80,7 @@
     "icon": "icon-user-md",
     "label": "MCH SUMMARY",
     "concepts": "ca7ec441-528f-4556-8aae-c4c6db40a330,d858f8cb-fe9e-4131-8d91-cd9929cc53de,5f86d19d-9546-4466-89c0-6f80c101191b,dcc39097-30ab-102d-86b0-7a5022ba4115,1053AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,dca0a383-30ab-102d-86b0-7a5022ba4115,dcc033e5-30ab-102d-86b0-7a5022ba4115,d5b0394c-424f-41db-bc2f-37180dcdbe74,dc548e89-30ab-102d-86b0-7a5022ba4115,1284AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,160081AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,5029d903-51ba-4c44-8745-e97f320739b6"
+
   },
   "requiredPrivilege": "App: ugandaemr-iss.widget.mchSummary",
   "extensions": [
@@ -105,7 +106,7 @@
       "icon": "icon-user-md",
       "label": "TPT STATUS ISS",
       "maxAge": "120m",
-      "concepts": "dce02aa1-30ab-102d-86b0-7a5022ba4115,dce02eca-30ab-102d-86b0-7a5022ba4115,dd2adde2-30ab-102d-86b0-7a5022ba4115,dce02aa1-30ab-102d-86b0-7a5022ba4115,dce02eca-30ab-102d-86b0-7a5022ba4115,dd2adde2-30ab-102d-86b0-7a5022ba4115,37d4ac43-b3b4-4445-b63b-e3acf47c8910,483939c7-79ba-4ca4-8c3e-346488c97fc7,813e21e7-4ccb-4fe9-aaab-3c0e40b6e356,23a6dc6e-ac16-4fa6-8029-155522548d04"
+      "concepts": "dce02aa1-30ab-102d-86b0-7a5022ba4115,dce02eca-30ab-102d-86b0-7a5022ba4115,dd2adde2-30ab-102d-86b0-7a5022ba4115,dce02eca-30ab-102d-86b0-7a5022ba4115,dd2adde2-30ab-102d-86b0-7a5022ba4115,37d4ac43-b3b4-4445-b63b-e3acf47c8910,483939c7-79ba-4ca4-8c3e-346488c97fc7,813e21e7-4ccb-4fe9-aaab-3c0e40b6e356,23a6dc6e-ac16-4fa6-8029-155522548d04,dce02676-30ab-102d-86b0-7a5022ba4115,e99d5875-e0d3-40fc-86d0-b5441542212b"
     },
     "requiredPrivilege": "App: ugandaemr-iss.widget.tptStatus",
     "extensions": [
@@ -119,7 +120,30 @@
         }
       }
     ]
+  },
+  {
+    "id": "ugandaemr-iss.dashboardwidget.viralLoadHistory",
+    "instanceOf": "coreapps.template.dashboardWidget",
+    "description": "Viral Load history for the patient",
+    "order": 12,
+    "config": {
+      "widget": "obsacrossencounters",
+      "icon": "icon-user-md",
+      "label": "VIRAL LOAD HISTORY ISS",
+      "concepts": "0b434cfa-b11c-4d14-aaa2-9aed6ca2da88,dca12261-30ab-102d-86b0-7a5022ba4115,dc8d83e3-30ab-102d-86b0-7a5022ba4115,dce153a7-30ab-102d-86b0-7a5022ba4115"
+    },
+    "requiredPrivilege": "App: ugandaemr-iss.widget.tptStatus",
+    "extensions": [
+      {
+        "id": "org.openmrs.module.coreapps.mostRecentVitals.clinicianDashboardFirstColumn",
+        "appId": "ugandaemr-iss.dashboardwidget.viralLoadHistory",
+        "extensionPointId": "patientDashboard.firstColumnFragments",
+        "extensionParams": {
+          "provider": "coreapps",
+          "fragment": "dashboardwidgets/dashboardWidget"
+        }
+      }
+    ]
   }
-
 
 ]

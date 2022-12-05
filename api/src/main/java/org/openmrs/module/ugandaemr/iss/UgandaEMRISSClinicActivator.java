@@ -38,11 +38,13 @@ public class UgandaEMRISSClinicActivator extends BaseModuleActivator {
 	public void started() {
 		AppFrameworkService appFrameworkService = Context.getService(AppFrameworkService.class);
 		
+		log.error("In ISS Activator");
 		try {
 			// run the initializers
 			for (Initializer initializer : getInitializers()) {
 				initializer.started();
 			}
+			
 			// install concepts
 			log.info("Installing custom concepts for ISS customizations");
 			DataImporter dataImporter = Context.getRegisteredComponent("dataImporter", DataImporter.class);
@@ -63,6 +65,7 @@ public class UgandaEMRISSClinicActivator extends BaseModuleActivator {
 			
 			//disable app inorder to add more custom concepts
 			appFrameworkService.disableApp("ugandaemr.dashboardwidget.TPTStatus");
+			//appFrameworkService.disableApp("ugandaemr.viralLoadHistory");
 			
 			log.info("Completed enabling and disabling apps");
 			log.info("Started UgandaEMR ISS Clinic Module");
